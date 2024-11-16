@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{32C5B42F-3410-8E90-836A-3AADC3F545FA}</ProjectGuid>
+    <ProjectGuid>{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -1375,7 +1375,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="URPGlitch.csproj">
-      <Project>{9FAB6729-B51D-C3D2-74EB-6939A3BAB9A0}</Project>
+      <Project>{189194BC-09B5-DD99-26F9-F665832B93A7}</Project>
       <Name>URPGlitch</Name>
     </ProjectReference>
   </ItemGroup>
