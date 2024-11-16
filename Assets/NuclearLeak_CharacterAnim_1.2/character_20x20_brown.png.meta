@@ -784,7 +784,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      character_20x20_brown_0: -2212295792848122200
+      character_20x20_brown_1: -8492662836328163815
+      character_20x20_brown_10: -6016988837201429957
+      character_20x20_brown_11: 3625982544181793714
+      character_20x20_brown_12: 202556428002362270
+      character_20x20_brown_13: -5088336740834733922
+      character_20x20_brown_14: 6280896544274453125
+      character_20x20_brown_15: -1707136471219276249
+      character_20x20_brown_16: 1473972144927547896
+      character_20x20_brown_17: -6546923933612451412
+      character_20x20_brown_18: 5620817667071525380
+      character_20x20_brown_19: 3060996633970874421
+      character_20x20_brown_2: 9115946910838708171
+      character_20x20_brown_20: -7611601907581924884
+      character_20x20_brown_21: -2943847799353247183
+      character_20x20_brown_22: 555242711077832470
+      character_20x20_brown_23: 6799544024549791987
+      character_20x20_brown_24: 3720501553481248167
+      character_20x20_brown_25: -6467863498421925555
+      character_20x20_brown_26: -5543382648612378026
+      character_20x20_brown_3: -6675052073163635624
+      character_20x20_brown_4: -439061490004841687
+      character_20x20_brown_5: -3583013034612871266
+      character_20x20_brown_6: -8269942090399031544
+      character_20x20_brown_7: 3749294888305508640
+      character_20x20_brown_8: 7464074912605255485
+      character_20x20_brown_9: -3494229928606912307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

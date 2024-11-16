@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wmploc.dll_14_1193-2_0: 7553209192832610860
+      wmploc.dll_14_1193-2_1: -7291712885109072973
+      wmploc.dll_14_1193-2_2: 2871787258925282898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

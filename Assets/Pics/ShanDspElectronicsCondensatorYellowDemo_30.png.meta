@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ShanDspElectronicsCondensatorYellowDemo_30_0: -9006512604874790052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

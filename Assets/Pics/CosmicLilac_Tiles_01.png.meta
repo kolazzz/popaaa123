@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CosmicLilac_Tiles_01_0: -1833889421904979263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
