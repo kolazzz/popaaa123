@@ -437,3 +437,55 @@ Memory consumption went from 182.9 MB to 177.0 MB.
 Total: 7.466800 ms (FindLiveObjects: 0.657800 ms CreateObjectMapping: 0.250600 ms MarkObjects: 4.511000 ms  DeleteObjects: 2.046700 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 978.310100 seconds.
+  path: Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_blue.png
+  artifactKey: Guid(a2f3293a9f3bb8b40bdaa546e810e84e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_blue.png using Guid(a2f3293a9f3bb8b40bdaa546e810e84e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4b645d02cb31fc90d988a03f8de09525') in 0.1214886 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_red.png
+  artifactKey: Guid(f1fcca5c2a83e4647a223d86b14911a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_red.png using Guid(f1fcca5c2a83e4647a223d86b14911a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7f90fdddaac42901a00144a74b98f0ec') in 0.0338305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_white.png
+  artifactKey: Guid(3656020c98d3f60439acfb1d5746c810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_white.png using Guid(3656020c98d3f60439acfb1d5746c810) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c912bd0f89b56a6362590ff7790df4d9') in 0.0397328 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 31
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_lime.png
+  artifactKey: Guid(8399bdf2013c0c84a8b20ba335b76560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_lime.png using Guid(8399bdf2013c0c84a8b20ba335b76560) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2195e30f823941ad93b05e74f0a4fe7e') in 0.0439362 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_purple.png
+  artifactKey: Guid(3d2ce0372b73d5e4e98bbcfa51dbb0b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_purple.png using Guid(3d2ce0372b73d5e4e98bbcfa51dbb0b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '261f668bf02eb765075482bd92668c3f') in 0.0373242 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_pink.png
+  artifactKey: Guid(56bea824fb4386a4990db685b668c25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NuclearLeak_CharacterAnim_1.2/character_20x20_pink.png using Guid(56bea824fb4386a4990db685b668c25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '564a1bcd09b7a55a5c984b59e1c36971') in 0.0364663 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
