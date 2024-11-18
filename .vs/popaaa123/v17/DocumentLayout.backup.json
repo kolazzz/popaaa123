@@ -3,19 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\User\\SemestrProject\\popaaa123\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\objecterasure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\objecterasure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\bulet1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\bulet1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\12321.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\12321.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\pohyi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\pohyi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\nopp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\nopp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nopp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,11 +42,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "ObjectErasure.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\ObjectErasure.cs",
+              "RelativeDocumentMoniker": "Assets\\ObjectErasure.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\ObjectErasure.cs",
+              "RelativeToolTip": "Assets\\ObjectErasure.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T16:57:17.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "bulet1.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\bulet1.cs",
+              "RelativeDocumentMoniker": "Assets\\bulet1.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\bulet1.cs",
+              "RelativeToolTip": "Assets\\bulet1.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwD0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:58:50.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "12321.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\12321.cs",
+              "RelativeDocumentMoniker": "Assets\\12321.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\12321.cs",
+              "RelativeToolTip": "Assets\\12321.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:24:52.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "pohyi.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\pohyi.cs",
+              "RelativeDocumentMoniker": "Assets\\pohyi.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\pohyi.cs",
+              "RelativeToolTip": "Assets\\pohyi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:20:58.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
@@ -38,25 +104,23 @@
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T13:20:44.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T13:20:44.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TopDownCharacterController.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\TopDownCharacterController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TopDownCharacterController.cs",
               "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\TopDownCharacterController.cs",
               "RelativeToolTip": "Assets\\Scripts\\TopDownCharacterController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAiwMMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:51:04.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:51:04.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "EnemyAI.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\EnemyAI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI.cs",
@@ -64,12 +128,11 @@
               "RelativeToolTip": "Assets\\Scripts\\EnemyAI.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAAAAAI8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:44:48.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:44:48.89Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "NOPP.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\NOPP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NOPP.cs",
@@ -77,8 +140,7 @@
               "RelativeToolTip": "Assets\\Scripts\\NOPP.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:00:11.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T23:00:11.982Z"
             }
           ]
         }
