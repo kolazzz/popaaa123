@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,6 +36,17 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private int maxHealth = 4; // Максимальное здоровье
     private int currentHealth; // Текущее здоровье
 
+    // Лимит на количество выстрелов
+    [Header("Shooting Settings")]
+    [SerializeField] private int maxShots = 15;  // Максимальное количество выстрелов
+    private int currentShots; // Текущее количество выстрелов
+
+    // UI для патронов
+    [Header("Ammo Settings")]
+    [SerializeField] private TextMeshProUGUI ammoText;  // Ссылка на TextMeshPro для отображения количества патронов
+    [SerializeField] private SpriteRenderer ammoSpriteRenderer; // Ссылка на спрайт для бар патронов
+    [SerializeField] private Sprite[] ammoSprites; // Массив спрайтов для патронов
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,6 +63,12 @@ public class TopDownCharacterController : MonoBehaviour
 
         // Инициализация здоровья
         currentHealth = maxHealth;
+
+        // Инициализация количества выстрелов
+        currentShots = 0;
+
+        // Инициализация UI патронов
+        UpdateAmmoUI();
     }
 
     void Update()
@@ -83,7 +101,7 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && currentShots < maxShots)  // Проверка на лимит выстрелов
         {
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
@@ -93,6 +111,12 @@ public class TopDownCharacterController : MonoBehaviour
             Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
             Instantiate(bulletPrefab, firePoint.position, bulletRotation);
+
+            // Увеличиваем количество выстрелов
+            currentShots++;
+
+            // Обновляем UI патронов
+            UpdateAmmoUI();
         }
     }
 
@@ -130,6 +154,16 @@ public class TopDownCharacterController : MonoBehaviour
         aimLine.SetPosition(1, aimEndPoint);
     }
 
+    private void UpdateAmmoUI()
+    {
+        // Обновляем текст с количеством патронов
+        ammoText.text = (maxShots - currentShots).ToString();
+
+        // Сменить спрайт бара с патронами каждые 3 выстрела
+        int ammoIndex = (currentShots / 3) % ammoSprites.Length;
+        ammoSpriteRenderer.sprite = ammoSprites[ammoIndex];
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -149,7 +183,6 @@ public class TopDownCharacterController : MonoBehaviour
     {
         return currentHealth; // Возвращаем текущее здоровье игрока
     }
-    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
