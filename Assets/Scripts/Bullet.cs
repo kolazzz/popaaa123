@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f; // Скорость пули
     public float lifeTime = 5f; // Время жизни пули
+    public int damage = 1; // Урон от пули
 
     void Start()
     {
@@ -21,7 +21,14 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Уничтожение пули при столкновении с препятствием
+        // Проверяем, есть ли у объекта скрипт EnemyAI
+        if (collision.gameObject.TryGetComponent(out EnemyAI enemy))
+        {
+            // Наносим урон врагу
+            enemy.TakeDamage(damage);
+        }
+
+        // Уничтожаем пулю при любом столкновении
         Destroy(gameObject);
     }
 

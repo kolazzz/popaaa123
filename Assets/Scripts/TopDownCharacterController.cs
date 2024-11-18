@@ -6,9 +6,11 @@ public class TopDownCharacterController : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
+
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private LayerMask damageLayerMask;
+
     private Camera _mainCamera;
 
     // Анимация через спрайты
@@ -28,6 +30,11 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private float aimLineMaxLength = 5f;    // Максимальная длина линии прицела
     private LineRenderer aimLine;
 
+    // Система здоровья
+    [Header("Health Settings")]
+    [SerializeField] private int maxHealth = 4; // Максимальное здоровье
+    private int currentHealth; // Текущее здоровье
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,30 +48,26 @@ public class TopDownCharacterController : MonoBehaviour
         aimLine.material = new Material(Shader.Find("Sprites/Default"));
         aimLine.startColor = aimLineColor;
         aimLine.endColor = aimLineColor;
+
+        // Инициализация здоровья
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
-        // Получение ввода для перемещения
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
 
-        // Определение, находится ли персонаж в движении
         isRunning = moveInput.magnitude > 0;
 
-        // Обновление анимации
         UpdateAnimation();
-
-        // Поворот персонажа в зависимости от позиции курсора
         RotateTowardsCursor();
 
-        // Стрельба
         if (!isRunning)
         {
             Shoot();
         }
 
-        // Обновление линии прицела
         UpdateAimLine();
 
         if (_mainCamera != null)
@@ -120,19 +123,40 @@ public class TopDownCharacterController : MonoBehaviour
         Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
-        // Определение направления и ограничение длины линии прицела
         Vector2 direction = (mousePosition - transform.position).normalized;
         Vector3 aimEndPoint = transform.position + (Vector3)direction * aimLineMaxLength;
 
-        aimLine.SetPosition(0, transform.position); // Начальная точка линии - позиция персонажа
-        aimLine.SetPosition(1, aimEndPoint);        // Конечная точка линии - ограниченная длиной
+        aimLine.SetPosition(0, transform.position);
+        aimLine.SetPosition(1, aimEndPoint);
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    public void ApplyKnockback(Vector2 direction, float force = 1500f)
+    {
+        rb.AddForce(direction * force, ForceMode2D.Impulse);
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth; // Возвращаем текущее здоровье игрока
+    }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (LayerMaskUtil.ContainsLayer(damageLayerMask, collision.gameObject))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // Враг наносит урон игроку
+            TakeDamage(1);
         }
     }
 }

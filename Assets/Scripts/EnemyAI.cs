@@ -15,6 +15,10 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private LayerMask damagelayerMask;
 
+    [Header("Health Settings")]
+    [SerializeField] private int maxHealth = 2; // Здоровье врага
+    private int currentHealth;
+
     private Rigidbody2D _rb;
     private Transform _followtarget;
     private SpriteRenderer _spriteRenderer;
@@ -32,6 +36,7 @@ public class EnemyAI : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         SetAnimationState(AnimationState.Idle);
+        currentHealth = maxHealth; // Устанавливаем здоровье врага
     }
 
     void Update()
@@ -89,12 +94,10 @@ public class EnemyAI : MonoBehaviour
             // Поворачиваем врага в сторону движения
             if (_followtarget.position.x < transform.position.x)
             {
-                // Враг движется влево
                 FlipSprite(true);
             }
             else if (_followtarget.position.x > transform.position.x)
             {
-                // Враг движется вправо
                 FlipSprite(false);
             }
         }
@@ -107,7 +110,7 @@ public class EnemyAI : MonoBehaviour
     private void FlipSprite(bool isFlipped)
     {
         Vector3 localScale = _spriteRenderer.transform.localScale;
-        localScale.x = isFlipped ? -Mathf.Abs(localScale.x) : Mathf.Abs(localScale.x); // Меняем знак по оси X
+        localScale.x = isFlipped ? -Mathf.Abs(localScale.x) : Mathf.Abs(localScale.x);
         _spriteRenderer.transform.localScale = localScale;
     }
 
@@ -129,24 +132,47 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out TopDownCharacterController _))
+        if (collision.gameObject.TryGetComponent(out TopDownCharacterController player))
         {
-            _isCollided = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (!_isDead) // Проверяем, чтобы враг не пытался умереть дважды
+            {
+                _isDead = true;
+                SetAnimationState(AnimationState.Death);
+
+                // Отталкиваем игрока
+                Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+                player.ApplyKnockback(knockbackDirection);
+
+                // Переходим к смерти
+                StartCoroutine(PlayDeathAnimation());
+            }
         }
 
         if (LayerMaskUtil.ContainsLayer(damagelayerMask, collision.gameObject) && !_isDead)
         {
-            _isDead = true;
-            SetAnimationState(AnimationState.Death);
+            TakeDamage(1); // Обрабатываем урон от других источников
         }
     }
+
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out TopDownCharacterController _))
         {
             _isCollided = false;
+        }
+    }
+
+    // Новый метод для получения урона
+    public void TakeDamage(int damage)
+    {
+        if (_isDead) return;
+
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            _isDead = true;
+            SetAnimationState(AnimationState.Death);
         }
     }
 
@@ -158,6 +184,6 @@ public class EnemyAI : MonoBehaviour
             yield return new WaitForSeconds(animationSpeed);
         }
 
-        gameObject.SetActive(false); // Отключаем объект после завершения анимации
+        Destroy(gameObject); // Уничтожаем объект после смерти
     }
 }
