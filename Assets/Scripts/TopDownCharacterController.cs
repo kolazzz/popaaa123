@@ -192,4 +192,16 @@ public class TopDownCharacterController : MonoBehaviour
             TakeDamage(1);
         }
     }
+
+    public void RestoreHealth(int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+    }
+
+    public void RestoreAmmo(int amount)
+    {
+        currentShots = Mathf.Clamp(currentShots - amount, 0, maxShots);
+        UpdateAmmoUI(); // Обновляем интерфейс для отображения текущих патронов
+    }
+
 }
