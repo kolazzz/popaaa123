@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2199209203213076081}
   - component: {fileID: 5301453969234527125}
   - component: {fileID: -6396054331072576087}
+  - component: {fileID: 8524736197850797752}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Bullet
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6004132452033431229}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 1.9155, y: -0.25564164, z: 0}
   m_LocalScale: {x: 5.4548, y: 5.4548, z: 5.4548}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &8418249621760159140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2778025565756910778, guid: 3656020c98d3f60439acfb1d5746c810, type: 3}
+  m_Sprite: {fileID: 6443249709818313110, guid: c69ead1641173a6478464207af938d4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifeTime: 5
+  damage: 1
 --- !u!50 &-6396054331072576087
 Rigidbody2D:
   serializedVersion: 5
@@ -167,3 +169,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8524736197850797752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6004132452033431229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3c6d9f697e6bc4c91190f5983a66d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSprites:
+  - {fileID: 6443249709818313110, guid: c69ead1641173a6478464207af938d4b, type: 3}
+  - {fileID: -3795183398887512977, guid: 94492a7137ac26a40a5d867a7c43ef34, type: 3}
+  - {fileID: -2861308788912492840, guid: 10e78db60b4ada7428572fa6fe008017, type: 3}
+  - {fileID: -8280172744235204991, guid: 1f7975c7c0035944796955770eca929f, type: 3}
+  animationSpeed: 0.1

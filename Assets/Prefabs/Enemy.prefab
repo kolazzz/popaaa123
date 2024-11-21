@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -6140327611770394126, guid: ed1f170f86dbae742897ec3552947b33, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.74696636, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -142,12 +142,18 @@ MonoBehaviour:
   - {fileID: 6502428286542746645, guid: bb9d0b0273664e34e801c05b0d50c7e6, type: 3}
   deathSprites:
   - {fileID: -6140327611770394126, guid: bf035a3819c03314ba58f09db79efbc9, type: 3}
-  - {fileID: -8052612402519209314, guid: 5958402ff3a8cca4fa126f7fedb8f1f1, type: 3}
-  - {fileID: -4104689538502577239, guid: 5958402ff3a8cca4fa126f7fedb8f1f1, type: 3}
+  - {fileID: -8083698455202549152, guid: c648f61bc57715a4e86b8984e3d78ef0, type: 3}
+  - {fileID: -5387648806950423354, guid: 0690e32c16aa2bc40a43e546b0b51686, type: 3}
+  - {fileID: 1198307229945686142, guid: a920bdbe5fb57f647b678d767c158e3c, type: 3}
+  - {fileID: 3297918450419210236, guid: b3ecc30ff1443d54199af9762d4da024, type: 3}
+  - {fileID: -8391165118550965929, guid: f83dac3dc4142f149bdefb59dfc0b464, type: 3}
+  - {fileID: 6999115610438063342, guid: 3ee2eeff2b59502499ad1611b1fa5844, type: 3}
+  - {fileID: -3609075002000088743, guid: f034b2aef92525b40bdf737cd886f53e, type: 3}
   animationSpeed: 0.1
   damagelayerMask:
     serializedVersion: 2
     m_Bits: 256
+  maxHealth: 2
 --- !u!61 &6830056356808435922
 BoxCollider2D:
   m_ObjectHideFlags: 0

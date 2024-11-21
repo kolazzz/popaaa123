@@ -109,11 +109,7 @@ MonoBehaviour:
   damageLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  idleSprites:
-  - {fileID: -3536793581093342374, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
-  - {fileID: -6880682399080523646, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
-  - {fileID: -6113509662265906443, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
-  - {fileID: 5019429658074487266, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
+  idleSprites: []
   runSprites:
   - {fileID: 8506342996878744885, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
   - {fileID: -8462438967632056623, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
@@ -122,6 +118,17 @@ MonoBehaviour:
   - {fileID: 7683158298848566251, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
   - {fileID: -404480142257409240, guid: 3d2ce0372b73d5e4e98bbcfa51dbb0b9, type: 3}
   animationSpeed: 0.1
+  damageSprites: []
+  damageAnimationSpeed: 0.1
+  deathSprites: []
+  deathAnimationSpeed: 0.2
+  aimLineColor: {r: 1, g: 0, b: 0, a: 1}
+  aimLineMaxLength: 5
+  maxHealth: 4
+  maxShots: 15
+  ammoText: {fileID: 0}
+  ammoSpriteRenderer: {fileID: 0}
+  ammoSprites: []
 --- !u!50 &3004969352526061165
 Rigidbody2D:
   serializedVersion: 5

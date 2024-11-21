@@ -138,6 +138,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Tech Dungeon Roguelite - Asset Pack (DEMO)\Tech Dungeon Roguelite - Asset Pack (DEMO)\UI\20x11 Cells.txt" />
     <None Include="Assets\URPGlitch-main\Shaders\DigitalGlitch.shader" />
+    <None Include="Assets\Warped shooting fx files\Warped shooting fx files\public-license.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\URPGlitch-main\Shaders\AnalogGlitch.shader" />

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,8 +8,14 @@ public class TopDownCharacterController : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
+    private float regularShootCooldown = 1f;  // Кулдаун для обычного оружия (1 секунда)
+    private float shotgunShootCooldown = 2f;  // Кулдаун для дробовика (3 секунды)
+
+    private float regularShootTimer = 0f;     // Таймер для отслеживания кулдауна обычного оружия
+    private float shotgunShootTimer = 0f;     // Таймер для отслеживания кулдауна дробовика
 
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject bullet2Prefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private LayerMask damageLayerMask;
 
@@ -25,27 +32,58 @@ public class TopDownCharacterController : MonoBehaviour
     private int currentFrame;
     private bool isRunning;
 
+    // Анимация получения урона
+    [Header("Damage Animation")]
+    [SerializeField] private Sprite[] damageSprites;
+    [SerializeField] private float damageAnimationSpeed = 0.1f;
+    private bool isTakingDamage = false;
+
+    // Анимация смерти
+    [Header("Death Animation")]
+    [SerializeField] private Sprite[] deathSprites;
+    [SerializeField] private float deathAnimationSpeed = 0.2f;
+    private bool isDying = false;
+
     // Линия прицела
     [Header("Aim Line Settings")]
-    [SerializeField] private Color aimLineColor = Color.red; // Цвет линии прицела
-    [SerializeField] private float aimLineMaxLength = 5f;    // Максимальная длина линии прицела
+    [SerializeField] private Color aimLineColor = Color.red;
+    [SerializeField] private float aimLineMaxLength = 5f;
     private LineRenderer aimLine;
 
     // Система здоровья
     [Header("Health Settings")]
-    [SerializeField] private int maxHealth = 4; // Максимальное здоровье
-    private int currentHealth; // Текущее здоровье
+    [SerializeField] private int maxHealth = 4;
+    private int currentHealth;
 
     // Лимит на количество выстрелов
     [Header("Shooting Settings")]
-    [SerializeField] private int maxShots = 15;  // Максимальное количество выстрелов
-    private int currentShots; // Текущее количество выстрелов
+    [SerializeField] private int maxShots = 15;
+    private int currentShots;
 
     // UI для патронов
     [Header("Ammo Settings")]
-    [SerializeField] private TextMeshProUGUI ammoText;  // Ссылка на TextMeshPro для отображения количества патронов
-    [SerializeField] private SpriteRenderer ammoSpriteRenderer; // Ссылка на спрайт для бар патронов
-    [SerializeField] private Sprite[] ammoSprites; // Массив спрайтов для патронов
+    [SerializeField] private TextMeshProUGUI ammoText;
+    [SerializeField] private SpriteRenderer ammoSpriteRenderer;
+    [SerializeField] private Sprite[] ammoSprites;
+
+    // Затемнение экрана
+    [Header("Death Screen Effect")]
+    [SerializeField] private GameObject darknessOverlay; // UI-панель с затемнением
+    [SerializeField] private float darknessFadeSpeed = 1f; // Скорость появления затемнения
+    [SerializeField] private Canvas gameCanvas; // Canvas, который нужно выключить
+
+    private bool isSceneFrozen = false; // Флаг остановки сцены
+
+    // Тип оружия
+    private enum WeaponType { Regular, Shotgun }
+    private WeaponType currentWeapon = WeaponType.Regular;
+
+    [SerializeField] private GameObject[] weaponPickups; // Массив объектов оружия для подбора
+
+    // Параметры дробовика
+    [Header("Shotgun Settings")]
+    [SerializeField] private float shotgunSpreadAngle = 15f;  // Угол рассеивания пуль
+    [SerializeField] private int shotgunPelletCount = 3; // Количество пуль, выстреливаемых дробовиком
 
     void Start()
     {
@@ -53,7 +91,6 @@ public class TopDownCharacterController : MonoBehaviour
         _mainCamera = Camera.main;
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Создание компонента LineRenderer для прицела
         aimLine = gameObject.AddComponent<LineRenderer>();
         aimLine.startWidth = 0.05f;
         aimLine.endWidth = 0.05f;
@@ -61,18 +98,16 @@ public class TopDownCharacterController : MonoBehaviour
         aimLine.startColor = aimLineColor;
         aimLine.endColor = aimLineColor;
 
-        // Инициализация здоровья
         currentHealth = maxHealth;
-
-        // Инициализация количества выстрелов
         currentShots = 0;
 
-        // Инициализация UI патронов
         UpdateAmmoUI();
     }
 
     void Update()
     {
+        if (isDying || isTakingDamage) return; // Блокируем управление при проигрывании анимации
+
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
 
@@ -81,9 +116,14 @@ public class TopDownCharacterController : MonoBehaviour
         UpdateAnimation();
         RotateTowardsCursor();
 
-        if (!isRunning)
+        // Стрельба в зависимости от оружия
+        if (currentWeapon == WeaponType.Regular)
         {
-            Shoot();
+            RegularShoot();
+        }
+        else if (currentWeapon == WeaponType.Shotgun)
+        {
+            ShotgunShoot();
         }
 
         UpdateAimLine();
@@ -92,33 +132,76 @@ public class TopDownCharacterController : MonoBehaviour
         {
             _mainCamera.transform.rotation = Quaternion.identity;
         }
+
+        if (regularShootTimer > 0f)
+        {
+            regularShootTimer -= Time.deltaTime;
+        }
+
+        if (shotgunShootTimer > 0f)
+        {
+            shotgunShootTimer -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
     {
+        if (isDying || isTakingDamage) return; // Блокируем движение при проигрывании анимации
         rb.linearVelocity = moveInput * moveSpeed;
     }
 
-    private void Shoot()
+    private void RegularShoot()
     {
-        if (Input.GetMouseButtonDown(0) && currentShots < maxShots)  // Проверка на лимит выстрелов
+        if (Input.GetMouseButtonDown(0) && currentShots < maxShots && regularShootTimer <= 0f)
         {
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
 
+            // Направление выстрела
             Vector2 direction = mousePosition - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
+            // Создание пули и выстрел
             Instantiate(bulletPrefab, firePoint.position, bulletRotation);
 
-            // Увеличиваем количество выстрелов
-            currentShots++;
-
-            // Обновляем UI патронов
+            currentShots++;  // Уменьшаем количество патронов
             UpdateAmmoUI();
+
+            // Сбросить кулдаун
+            regularShootTimer = regularShootCooldown;
         }
     }
+
+
+    private void ShotgunShoot()
+    {
+        if (Input.GetMouseButtonDown(0) && currentShots < maxShots && shotgunShootTimer <= 0f)
+        {
+            Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+
+            // Стреляем тремя пулями с углом рассеивания
+            for (int i = -1; i <= 1; i++)
+            {
+                Vector2 direction = (mousePosition - transform.position).normalized;
+                float angleOffset = shotgunSpreadAngle * i; // Смещение угла для каждого выстрела
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + angleOffset;
+                Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+                // Создание пуль для дробовика
+                Instantiate(bullet2Prefab, firePoint.position, bulletRotation);
+            }
+
+            currentShots++;  // Уменьшаем количество патронов
+            UpdateAmmoUI();
+
+            // Сбросить кулдаун
+            shotgunShootTimer = shotgunShootCooldown;
+        }
+    }
+
+
 
     private void UpdateAnimation()
     {
@@ -156,10 +239,7 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void UpdateAmmoUI()
     {
-        // Обновляем текст с количеством патронов
         ammoText.text = (maxShots - currentShots).ToString();
-
-        // Сменить спрайт бара с патронами каждые 3 выстрела
         int ammoIndex = (currentShots / 3) % ammoSprites.Length;
         ammoSpriteRenderer.sprite = ammoSprites[ammoIndex];
     }
@@ -168,29 +248,140 @@ public class TopDownCharacterController : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDying)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(PlayDeathAnimation());
+        }
+        else if (!isTakingDamage) // Анимация получения урона
+        {
+            StartCoroutine(PlayDamageAnimation());
         }
     }
 
-    public void ApplyKnockback(Vector2 direction, float force = 1500f)
+    private IEnumerator PlayDamageAnimation()
+    {
+        isTakingDamage = true;
+        rb.linearVelocity = Vector2.zero;
+
+        for (int i = 0; i < damageSprites.Length; i++)
+        {
+            spriteRenderer.sprite = damageSprites[i];
+            yield return new WaitForSeconds(damageAnimationSpeed);
+        }
+
+        isTakingDamage = false;
+    }
+
+    private IEnumerator PlayDeathAnimation()
+    {
+        isDying = true;
+        rb.linearVelocity = Vector2.zero;
+
+        // Остановить сцену
+        FreezeScene();
+
+        // Отключить Canvas
+        if (gameCanvas != null)
+        {
+            gameCanvas.gameObject.SetActive(false);
+        }
+
+        // Включить затемнение
+        yield return StartCoroutine(FadeInDarkness());
+
+        // Анимация смерти
+        for (int i = 0; i < deathSprites.Length; i++)
+        {
+            spriteRenderer.sprite = deathSprites[i];
+            yield return new WaitForSeconds(deathAnimationSpeed);
+        }
+
+        // Перезапуск сцены
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void FreezeScene()
+    {
+        if (isSceneFrozen) return;
+
+        isSceneFrozen = true;
+
+        // Найти все объекты с Rigidbody2D и отключить их
+        foreach (Rigidbody2D rb in FindObjectsOfType<Rigidbody2D>())
+        {
+            if (rb.gameObject != gameObject) // Исключить игрока
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.isKinematic = true;
+            }
+        }
+
+        // Найти все активные MonoBehaviour и отключить их
+        foreach (MonoBehaviour script in FindObjectsOfType<MonoBehaviour>())
+        {
+            if (script.gameObject != gameObject) // Исключить игрока
+            {
+                script.enabled = false;
+            }
+        }
+    }
+
+    private IEnumerator FadeInDarkness()
+    {
+        if (darknessOverlay == null) yield break;
+
+        CanvasGroup canvasGroup = darknessOverlay.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = darknessOverlay.AddComponent<CanvasGroup>();
+        }
+
+        darknessOverlay.SetActive(true);
+        canvasGroup.alpha = 0f;
+
+        while (canvasGroup.alpha < 1f)
+        {
+            canvasGroup.alpha += Time.deltaTime * darknessFadeSpeed;
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1f;
+    }
+
+    public void ApplyKnockback(Vector2 direction, float force = 5f)
     {
         rb.AddForce(direction * force, ForceMode2D.Impulse);
     }
 
     public int GetCurrentHealth()
     {
-        return currentHealth; // Возвращаем текущее здоровье игрока
+        return currentHealth;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Проверяем, столкнулся ли игрок с объектом оружия
+        foreach (GameObject weaponPickup in weaponPickups)
+        {
+            if (collision.gameObject == weaponPickup)
+            {
+                SwitchToShotgun();
+                Destroy(collision.gameObject);  // Удаление объекта оружия
+                break;
+            }
+        }
+
+        // Механика получения урона
         if (LayerMaskUtil.ContainsLayer(damageLayerMask, collision.gameObject))
         {
-            // Враг наносит урон игроку
             TakeDamage(1);
         }
+    }
+
+    private void SwitchToShotgun()
+    {
+        currentWeapon = WeaponType.Shotgun;
+        Debug.Log("Switched to Shotgun");
     }
 
     public void RestoreHealth(int amount)
@@ -201,7 +392,6 @@ public class TopDownCharacterController : MonoBehaviour
     public void RestoreAmmo(int amount)
     {
         currentShots = Mathf.Clamp(currentShots - amount, 0, maxShots);
-        UpdateAmmoUI(); // Обновляем интерфейс для отображения текущих патронов
+        UpdateAmmoUI();
     }
-
 }

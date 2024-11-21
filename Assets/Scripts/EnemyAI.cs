@@ -89,23 +89,21 @@ public class EnemyAI : MonoBehaviour
         if (_followtarget && !_isCollided)
         {
             SetAnimationState(AnimationState.Run);
+
+            // Перемещаем врага к игроку
             transform.position = Vector2.MoveTowards(transform.position, _followtarget.position, speed * Time.deltaTime);
 
-            // Поворачиваем врага в сторону движения
-            if (_followtarget.position.x < transform.position.x)
-            {
-                FlipSprite(true);
-            }
-            else if (_followtarget.position.x > transform.position.x)
-            {
-                FlipSprite(false);
-            }
+            // Поворачиваем врага так, чтобы он смотрел на игрока
+            Vector3 direction = (_followtarget.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Угол поворота
+            transform.rotation = Quaternion.Euler(0, 0, angle); // Применяем поворот
         }
         else
         {
             SetAnimationState(AnimationState.Idle);
         }
     }
+
 
     private void FlipSprite(bool isFlipped)
     {
