@@ -13496,7 +13496,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &844270938
 RectTransform:
@@ -43883,7 +43883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3aa0618274491c4ebf5be58cf6b0c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoRestoreAmount: 5
+  ammoRestoreAmount: 10
   pickupText: {fileID: 446740629}
   textDisplayDuration: 2
 --- !u!58 &1756426718
@@ -43987,7 +43987,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.53, y: 34.98, z: 0}
-  m_LocalScale: {x: 3.012553, y: 3.012553, z: 3.012553}
+  m_LocalScale: {x: 1.8835385, y: 1.8835385, z: 1.8835385}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139457,6 +139457,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4891266809812677826, guid: b0f7ac4e9d2b26549ba7e37949e54672, type: 3}
     - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
+      propertyPath: objectsTagToShowColliders
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
+      propertyPath: colliderVisibilityDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
       propertyPath: 'deathSprites.Array.data[0]'
       value: 
       objectReference: {fileID: 4093529123795720158, guid: 104a89e8e4f9f8843979fbcbab5ef843, type: 3}
@@ -139527,6 +139535,10 @@ PrefabInstance:
     - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
       propertyPath: shotgunPickUpObjects.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
+      propertyPath: objectsToShowColliders.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
       propertyPath: 'shotgunPickUpObjects.Array.data[0]'
@@ -139623,6 +139635,18 @@ PrefabInstance:
     - target: {fileID: 3536255830599768452, guid: bd28fac28b392b14a952248515bc89a1, type: 3}
       propertyPath: m_Name
       value: HP
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114000232353218077, guid: bd28fac28b392b14a952248515bc89a1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2411298
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114000232353218077, guid: bd28fac28b392b14a952248515bc89a1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2411298
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114000232353218077, guid: bd28fac28b392b14a952248515bc89a1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2411298
       objectReference: {fileID: 0}
     - target: {fileID: 4114000232353218077, guid: bd28fac28b392b14a952248515bc89a1, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,7 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class TopDownCharacterController : MonoBehaviour
 {
@@ -19,7 +21,16 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private LayerMask damageLayerMask;
 
+    private List<GameObject> highlights = new List<GameObject>(); // Список подсветок
+
+
     private Camera _mainCamera;
+    
+    [Header("Collider Visualization Settings")]
+    [SerializeField] private string objectsTagToShowColliders = "Enemy"; // Тег объектов для отображения коллайдеров
+    [SerializeField] private float colliderVisibilityDuration = 3f; // Длительность отображения
+    private bool showColliders = false;
+    private float colliderTimer = 0f;
 
     // Анимация через спрайты
     [Header("Animation Sprites")]
@@ -141,6 +152,22 @@ public class TopDownCharacterController : MonoBehaviour
         if (shotgunShootTimer > 0f)
         {
             shotgunShootTimer -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            ShowEnemyColliders();
+            colliderTimer = colliderVisibilityDuration; // Устанавливаем таймер
+        }
+
+        if (colliderTimer > 0f)
+        {
+            colliderTimer -= Time.deltaTime;
+
+            if (colliderTimer <= 0f)
+            {
+                HideEnemyColliders();
+            }
         }
     }
 
@@ -394,4 +421,82 @@ public class TopDownCharacterController : MonoBehaviour
         currentShots = Mathf.Clamp(currentShots - amount, 0, maxShots);
         UpdateAmmoUI();
     }
+
+    private void ShowEnemyColliders()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(objectsTagToShowColliders);
+
+        foreach (GameObject enemy in enemies)
+        {
+            // Находим триггерные CircleCollider2D
+            CircleCollider2D[] colliders = enemy.GetComponents<CircleCollider2D>()
+                .Where(c => c.isTrigger) // Только триггеры
+                .ToArray();
+
+            if (colliders.Length == 0)
+            {
+                Debug.LogWarning($"Enemy '{enemy.name}' does not have a trigger CircleCollider2D.");
+                continue;
+            }
+
+            foreach (var collider in colliders)
+            {
+                // Создаем объект подсветки
+                var highlight = new GameObject("Highlight");
+                var lineRenderer = highlight.AddComponent<LineRenderer>();
+
+                lineRenderer.startWidth = 0.05f;
+                lineRenderer.endWidth = 0.05f;
+                lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+                lineRenderer.startColor = Color.red;
+                lineRenderer.endColor = Color.red;
+                lineRenderer.useWorldSpace = true;
+
+                // Строим круг на основе коллайдера
+                int segments = 100; // Количество сегментов круга для визуализации
+                float radius = collider.radius * enemy.transform.lossyScale.x; // Учитываем масштаб объекта
+                Vector3 center = collider.transform.position + (Vector3)collider.offset;
+
+                Vector3[] points = GetCirclePoints(center, radius, segments);
+                lineRenderer.positionCount = points.Length;
+                lineRenderer.SetPositions(points);
+
+                highlights.Add(highlight); // Добавляем подсветку в список
+            }
+        }
+    }
+
+
+
+    private void HideEnemyColliders()
+    {
+        foreach (var highlight in highlights)
+        {
+            Destroy(highlight); // Удаляем подсветку
+        }
+        highlights.Clear(); // Очищаем список
+    }
+
+
+
+    private Vector3[] GetCirclePoints(Vector3 center, float radius, int segments)
+    {
+        Vector3[] points = new Vector3[segments + 1];
+        float angleStep = 360f / segments;
+
+        for (int i = 0; i <= segments; i++)
+        {
+            float angle = Mathf.Deg2Rad * angleStep * i;
+            float x = center.x + Mathf.Cos(angle) * radius;
+            float y = center.y + Mathf.Sin(angle) * radius;
+            points[i] = new Vector3(x, y, 0);
+        }
+
+        return points;
+    }
+
+
+
+
+
 }
