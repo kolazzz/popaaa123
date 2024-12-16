@@ -138,10 +138,15 @@ MonoBehaviour:
   speed: 3
   idleSprites: []
   runSprites:
-  - {fileID: 1719519851090322729, guid: 1b2525d1d1eb0bd47b97cb054cb0bcf7, type: 3}
-  - {fileID: 6502428286542746645, guid: bb9d0b0273664e34e801c05b0d50c7e6, type: 3}
+  - {fileID: 6746123077274529031, guid: 382241aa1d1ba5f49a453067121ce6de, type: 3}
+  - {fileID: 4491686106250436817, guid: 7c295203179f8f64bbbd4ce6307cfc1a, type: 3}
   deathSprites:
   - {fileID: -6140327611770394126, guid: bf035a3819c03314ba58f09db79efbc9, type: 3}
+  - {fileID: -6140327611770394126, guid: bf035a3819c03314ba58f09db79efbc9, type: 3}
+  - {fileID: -8128880706103742050, guid: 3f3f31b8235b72947b6aa0753bf6567d, type: 3}
+  - {fileID: -8003519703914921659, guid: 4eeb2ca45936c124980a0a0b350bdd46, type: 3}
+  - {fileID: 7745638608442367289, guid: b5330e26952794145a9580c2274eec92, type: 3}
+  - {fileID: 423707268421103846, guid: e6274f80b54d0da409cb6ea2ccbca769, type: 3}
   - {fileID: -8083698455202549152, guid: c648f61bc57715a4e86b8984e3d78ef0, type: 3}
   - {fileID: -5387648806950423354, guid: 0690e32c16aa2bc40a43e546b0b51686, type: 3}
   - {fileID: 1198307229945686142, guid: a920bdbe5fb57f647b678d767c158e3c, type: 3}

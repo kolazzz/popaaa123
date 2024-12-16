@@ -122,6 +122,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

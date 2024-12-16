@@ -16,8 +16,14 @@ public class TopDownCharacterController : MonoBehaviour
     private float regularShootTimer = 0f;     // Таймер для отслеживания кулдауна обычного оружия
     private float shotgunShootTimer = 0f;     // Таймер для отслеживания кулдауна дробовика
 
+    [SerializeField] private float railgunShootCooldown = 0.2f; // Скорость стрельбы рельсотрона (настраивается в инспекторе)
+    private float railgunShootTimer = 0f;                       // Таймер для стрельбы рельсотрона
+
+
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject bullet2Prefab;
+    [SerializeField] private GameObject railgunBulletPrefab; // Префаб пули рельсотрона (зеленый)
+
     [SerializeField] private Transform firePoint;
     [SerializeField] private LayerMask damageLayerMask;
 
@@ -86,7 +92,7 @@ public class TopDownCharacterController : MonoBehaviour
     private bool isSceneFrozen = false; // Флаг остановки сцены
 
     // Тип оружия
-    private enum WeaponType { Regular, Shotgun }
+    private enum WeaponType { Regular, Shotgun, Railgun }
     private WeaponType currentWeapon = WeaponType.Regular;
 
     [SerializeField] private GameObject[] weaponPickups; // Массив объектов оружия для подбора
@@ -128,14 +134,19 @@ public class TopDownCharacterController : MonoBehaviour
         RotateTowardsCursor();
 
         // Стрельба в зависимости от оружия
-        if (currentWeapon == WeaponType.Regular)
+        switch (currentWeapon)
         {
-            RegularShoot();
+            case WeaponType.Regular:
+                RegularShoot();
+                break;
+            case WeaponType.Shotgun:
+                ShotgunShoot();
+                break;
+            case WeaponType.Railgun:
+                RailgunShoot();
+                break;
         }
-        else if (currentWeapon == WeaponType.Shotgun)
-        {
-            ShotgunShoot();
-        }
+
 
         UpdateAimLine();
 
@@ -181,20 +192,7 @@ public class TopDownCharacterController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && currentShots < maxShots && regularShootTimer <= 0f)
         {
-            Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;
-
-            // Направление выстрела
-            Vector2 direction = mousePosition - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-            // Создание пули и выстрел
-            Instantiate(bulletPrefab, firePoint.position, bulletRotation);
-
-            currentShots++;  // Уменьшаем количество патронов
-            UpdateAmmoUI();
-
+            FireBullet();
             // Сбросить кулдаун
             regularShootTimer = regularShootCooldown;
         }
@@ -227,6 +225,31 @@ public class TopDownCharacterController : MonoBehaviour
             shotgunShootTimer = shotgunShootCooldown;
         }
     }
+
+    private void RailgunShoot()
+    {
+        // Проверяем, удерживается ли ЛКМ и есть ли патроны
+        if (Input.GetMouseButton(0) && currentShots < maxShots)
+        {
+            // Проверяем кулдаун
+            if (railgunShootTimer <= 0f)
+            {
+                // Создаём одну пулю
+                FireBullet();
+
+                // Устанавливаем кулдаун на следующий выстрел
+                railgunShootTimer = railgunShootCooldown;
+            }
+        }
+
+        // Уменьшаем кулдаун со временем
+        if (railgunShootTimer > 0f)
+        {
+            railgunShootTimer -= Time.deltaTime;
+        }
+    }
+
+
 
 
 
@@ -387,29 +410,39 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Проверяем, столкнулся ли игрок с объектом оружия
-        foreach (GameObject weaponPickup in weaponPickups)
+        // Проверяем тег объекта, с которым произошло столкновение
+        if (collision.gameObject.CompareTag("Shotgun"))
         {
-            if (collision.gameObject == weaponPickup)
-            {
-                SwitchToShotgun();
-                Destroy(collision.gameObject);  // Удаление объекта оружия
-                break;
-            }
+            SwitchToShotgun();  // Переключаем на дробовик
+            Destroy(collision.gameObject);  // Удаляем объект оружия
+        }
+        else if (collision.gameObject.CompareTag("Railgun"))
+        {
+            SwitchToRailgun();  // Переключаем на рельсотрон
+            Destroy(collision.gameObject);  // Удаляем объект оружия
         }
 
-        // Механика получения урона
+        // Проверяем, нанесен ли урон игроку
         if (LayerMaskUtil.ContainsLayer(damageLayerMask, collision.gameObject))
         {
             TakeDamage(1);
         }
     }
 
+
     private void SwitchToShotgun()
     {
         currentWeapon = WeaponType.Shotgun;
         Debug.Log("Switched to Shotgun");
     }
+
+    private void SwitchToRailgun()
+    {
+        currentWeapon = WeaponType.Railgun;
+        Debug.Log("Switched to Railgun");
+        // Если хотите, можно здесь изменить цвет пули или какие-то другие параметры для рельсотрона
+    }
+
 
     public void RestoreHealth(int amount)
     {
@@ -494,6 +527,40 @@ public class TopDownCharacterController : MonoBehaviour
 
         return points;
     }
+
+    private void FireBullet()
+    {
+        // Получаем позицию мыши
+        Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+
+        // Вычисляем направление от игрока к мыши
+        Vector2 direction = mousePosition - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        // Выбираем префаб пули в зависимости от текущего оружия
+        GameObject selectedBulletPrefab = bulletPrefab; // По умолчанию — пуля обычного оружия
+        if (currentWeapon == WeaponType.Shotgun)
+        {
+            selectedBulletPrefab = bullet2Prefab; // Используем первый префаб
+        }
+        else if (currentWeapon == WeaponType.Railgun)
+        {
+            selectedBulletPrefab = railgunBulletPrefab; // Используем третий префаб
+        }
+
+        // Создаём пулю
+        Instantiate(selectedBulletPrefab, firePoint.position, bulletRotation);
+
+        // Уменьшаем количество оставшихся выстрелов
+        currentShots++;
+
+        // Обновляем UI патронов
+        UpdateAmmoUI();
+    }
+
+
 
 
 
