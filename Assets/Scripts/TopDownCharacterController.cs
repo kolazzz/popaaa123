@@ -10,6 +10,7 @@ public class TopDownCharacterController : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 moveInput;
+
     private float regularShootCooldown = 1f;  // Кулдаун для обычного оружия (1 секунда)
     private float shotgunShootCooldown = 2f;  // Кулдаун для дробовика (3 секунды)
 
@@ -23,15 +24,25 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject bullet2Prefab;
     [SerializeField] private GameObject railgunBulletPrefab; // Префаб пули рельсотрона (зеленый)
+    [SerializeField] private GameObject katanaBulletPrefab; // Префаб пули для катаны
+
+    [Header("Katana Settings")]
+    [SerializeField] private Sprite[] katanaAttackSprites; // Спрайты для анимации катаны
+    [SerializeField] private float katanaAnimationSpeed = 0.1f; // Скорость анимации катаны
+
+
 
     [SerializeField] private Transform firePoint;
     [SerializeField] private LayerMask damageLayerMask;
+
+    [SerializeField] private TextMeshProUGUI weaponText;
+    [SerializeField] private GameObject[] objectsToHighlight;
 
     private List<GameObject> highlights = new List<GameObject>(); // Список подсветок
 
 
     private Camera _mainCamera;
-    
+
     [Header("Collider Visualization Settings")]
     [SerializeField] private string objectsTagToShowColliders = "Enemy"; // Тег объектов для отображения коллайдеров
     [SerializeField] private float colliderVisibilityDuration = 3f; // Длительность отображения
@@ -92,7 +103,7 @@ public class TopDownCharacterController : MonoBehaviour
     private bool isSceneFrozen = false; // Флаг остановки сцены
 
     // Тип оружия
-    private enum WeaponType { Regular, Shotgun, Railgun }
+    private enum WeaponType { Regular, Shotgun, Railgun, Katana }
     private WeaponType currentWeapon = WeaponType.Regular;
 
     [SerializeField] private GameObject[] weaponPickups; // Массив объектов оружия для подбора
@@ -101,6 +112,9 @@ public class TopDownCharacterController : MonoBehaviour
     [Header("Shotgun Settings")]
     [SerializeField] private float shotgunSpreadAngle = 15f;  // Угол рассеивания пуль
     [SerializeField] private int shotgunPelletCount = 3; // Количество пуль, выстреливаемых дробовиком
+
+
+    private bool isAttackingWithKatana = false;
 
     void Start()
     {
@@ -131,7 +145,11 @@ public class TopDownCharacterController : MonoBehaviour
         isRunning = moveInput.magnitude > 0;
 
         UpdateAnimation();
-        RotateTowardsCursor();
+
+        if (!isAttackingWithKatana)
+        {
+            RotateTowardsCursor();
+        }
 
         // Стрельба в зависимости от оружия
         switch (currentWeapon)
@@ -145,8 +163,10 @@ public class TopDownCharacterController : MonoBehaviour
             case WeaponType.Railgun:
                 RailgunShoot();
                 break;
+            case WeaponType.Katana:
+                KatanaShoot();
+                break;
         }
-
 
         UpdateAimLine();
 
@@ -165,7 +185,7 @@ public class TopDownCharacterController : MonoBehaviour
             shotgunShootTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ShowEnemyColliders();
             colliderTimer = colliderVisibilityDuration; // Устанавливаем таймер
@@ -182,6 +202,77 @@ public class TopDownCharacterController : MonoBehaviour
         }
     }
 
+    private void CheckPickedWeapon(string weaponName)
+    {
+        // Сброс цвета для всех объектов
+        foreach (GameObject obj in objectsToHighlight)
+        {
+            if (obj != null)
+            {
+                var renderer = obj.GetComponent<SpriteRenderer>();
+                if (renderer != null)
+                {
+                    renderer.color = Color.white; // Сбрасываем цвет
+                }
+            }
+        }
+
+        // Изменяем текст и цвет в зависимости от оружия
+        switch (weaponName)
+        {
+            case "Pistol":
+                weaponText.text = "Pistol";
+                break;
+            case "Shotgun":
+                weaponText.text = "Shotgun";
+                HighlightObject(0);
+                break;
+            case "Railgun":
+                weaponText.text = "Railgun";
+                HighlightObject(1);
+                break;
+            case "Katana":
+                weaponText.text = "Katana";
+                HighlightObject(2);
+                break;
+            default:
+                weaponText.text = "Unknown Weapon";
+                break;
+        }
+    }
+
+    private void HighlightObject(int index)
+    {
+        if (index >= 0 && index < objectsToHighlight.Length && objectsToHighlight[index] != null)
+        {
+            var renderer = objectsToHighlight[index].GetComponent<SpriteRenderer>();
+            if (renderer != null)
+            {
+                renderer.color = Color.red; // Окрашиваем объект в красный
+            }
+        }
+    }
+
+    private void KatanaShoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(PlayKatanaAttackAnimation());
+            FireBullet(katanaBulletPrefab, true); // Передаём true для короткого расстояния
+        }
+    }
+
+
+    private IEnumerator PlayKatanaAttackAnimation()
+    {
+        for (int i = 0; i < katanaAttackSprites.Length; i++)
+        {
+            spriteRenderer.sprite = katanaAttackSprites[i];
+            yield return new WaitForSeconds(katanaAnimationSpeed);
+        }
+    }
+
+
     void FixedUpdate()
     {
         if (isDying || isTakingDamage) return; // Блокируем движение при проигрывании анимации
@@ -192,12 +283,15 @@ public class TopDownCharacterController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && currentShots < maxShots && regularShootTimer <= 0f)
         {
-            FireBullet();
+            FireBullet(bulletPrefab);
             // Сбросить кулдаун
             regularShootTimer = regularShootCooldown;
         }
     }
 
+    
+
+   
 
     private void ShotgunShoot()
     {
@@ -206,52 +300,39 @@ public class TopDownCharacterController : MonoBehaviour
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
 
-            // Стреляем тремя пулями с углом рассеивания
             for (int i = -1; i <= 1; i++)
             {
                 Vector2 direction = (mousePosition - transform.position).normalized;
-                float angleOffset = shotgunSpreadAngle * i; // Смещение угла для каждого выстрела
+                float angleOffset = shotgunSpreadAngle * i;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + angleOffset;
                 Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-                // Создание пуль для дробовика
                 Instantiate(bullet2Prefab, firePoint.position, bulletRotation);
             }
 
-            currentShots++;  // Уменьшаем количество патронов
+            currentShots++;
             UpdateAmmoUI();
 
-            // Сбросить кулдаун
             shotgunShootTimer = shotgunShootCooldown;
         }
     }
 
     private void RailgunShoot()
     {
-        // Проверяем, удерживается ли ЛКМ и есть ли патроны
         if (Input.GetMouseButton(0) && currentShots < maxShots)
         {
-            // Проверяем кулдаун
             if (railgunShootTimer <= 0f)
             {
-                // Создаём одну пулю
-                FireBullet();
-
-                // Устанавливаем кулдаун на следующий выстрел
+                FireBullet(railgunBulletPrefab);
                 railgunShootTimer = railgunShootCooldown;
             }
         }
 
-        // Уменьшаем кулдаун со временем
         if (railgunShootTimer > 0f)
         {
             railgunShootTimer -= Time.deltaTime;
         }
     }
-
-
-
-
 
     private void UpdateAnimation()
     {
@@ -277,6 +358,8 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void UpdateAimLine()
     {
+        if (currentWeapon == WeaponType.Katana) return; // Убираем линию прицела для катаны
+
         Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
@@ -286,6 +369,7 @@ public class TopDownCharacterController : MonoBehaviour
         aimLine.SetPosition(0, transform.position);
         aimLine.SetPosition(1, aimEndPoint);
     }
+
 
     private void UpdateAmmoUI()
     {
@@ -302,7 +386,7 @@ public class TopDownCharacterController : MonoBehaviour
         {
             StartCoroutine(PlayDeathAnimation());
         }
-        else if (!isTakingDamage) // Анимация получения урона
+        else if (!isTakingDamage)
         {
             StartCoroutine(PlayDamageAnimation());
         }
@@ -327,26 +411,21 @@ public class TopDownCharacterController : MonoBehaviour
         isDying = true;
         rb.linearVelocity = Vector2.zero;
 
-        // Остановить сцену
         FreezeScene();
 
-        // Отключить Canvas
         if (gameCanvas != null)
         {
             gameCanvas.gameObject.SetActive(false);
         }
 
-        // Включить затемнение
         yield return StartCoroutine(FadeInDarkness());
 
-        // Анимация смерти
         for (int i = 0; i < deathSprites.Length; i++)
         {
             spriteRenderer.sprite = deathSprites[i];
             yield return new WaitForSeconds(deathAnimationSpeed);
         }
 
-        // Перезапуск сцены
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -356,20 +435,18 @@ public class TopDownCharacterController : MonoBehaviour
 
         isSceneFrozen = true;
 
-        // Найти все объекты с Rigidbody2D и отключить их
         foreach (Rigidbody2D rb in FindObjectsOfType<Rigidbody2D>())
         {
-            if (rb.gameObject != gameObject) // Исключить игрока
+            if (rb.gameObject != gameObject)
             {
                 rb.linearVelocity = Vector2.zero;
                 rb.isKinematic = true;
             }
         }
 
-        // Найти все активные MonoBehaviour и отключить их
         foreach (MonoBehaviour script in FindObjectsOfType<MonoBehaviour>())
         {
-            if (script.gameObject != gameObject) // Исключить игрока
+            if (script.gameObject != gameObject)
             {
                 script.enabled = false;
             }
@@ -410,25 +487,30 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Проверяем тег объекта, с которым произошло столкновение
         if (collision.gameObject.CompareTag("Shotgun"))
         {
-            SwitchToShotgun();  // Переключаем на дробовик
-            Destroy(collision.gameObject);  // Удаляем объект оружия
+            SwitchToShotgun();
+            CheckPickedWeapon("Shotgun");
+            Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("Railgun"))
         {
-            SwitchToRailgun();  // Переключаем на рельсотрон
-            Destroy(collision.gameObject);  // Удаляем объект оружия
+            SwitchToRailgun();
+            CheckPickedWeapon("Railgun");
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Katana"))
+        {
+            SwitchToKatana();
+            CheckPickedWeapon("Katana");
+            Destroy(collision.gameObject);
         }
 
-        // Проверяем, нанесен ли урон игроку
         if (LayerMaskUtil.ContainsLayer(damageLayerMask, collision.gameObject))
         {
             TakeDamage(1);
         }
     }
-
 
     private void SwitchToShotgun()
     {
@@ -440,9 +522,13 @@ public class TopDownCharacterController : MonoBehaviour
     {
         currentWeapon = WeaponType.Railgun;
         Debug.Log("Switched to Railgun");
-        // Если хотите, можно здесь изменить цвет пули или какие-то другие параметры для рельсотрона
     }
 
+    private void SwitchToKatana()
+    {
+        currentWeapon = WeaponType.Katana;
+        Debug.Log("Switched to Katana");
+    }
 
     public void RestoreHealth(int amount)
     {
@@ -461,9 +547,8 @@ public class TopDownCharacterController : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            // Находим триггерные CircleCollider2D
             CircleCollider2D[] colliders = enemy.GetComponents<CircleCollider2D>()
-                .Where(c => c.isTrigger) // Только триггеры
+                .Where(c => c.isTrigger)
                 .ToArray();
 
             if (colliders.Length == 0)
@@ -474,7 +559,6 @@ public class TopDownCharacterController : MonoBehaviour
 
             foreach (var collider in colliders)
             {
-                // Создаем объект подсветки
                 var highlight = new GameObject("Highlight");
                 var lineRenderer = highlight.AddComponent<LineRenderer>();
 
@@ -485,9 +569,8 @@ public class TopDownCharacterController : MonoBehaviour
                 lineRenderer.endColor = Color.red;
                 lineRenderer.useWorldSpace = true;
 
-                // Строим круг на основе коллайдера
-                int segments = 100; // Количество сегментов круга для визуализации
-                float radius = collider.radius * enemy.transform.lossyScale.x; // Учитываем масштаб объекта
+                int segments = 100;
+                float radius = collider.radius * enemy.transform.lossyScale.x;
                 Vector3 center = collider.transform.position + (Vector3)collider.offset;
 
                 Vector3[] points = GetCirclePoints(center, radius, segments);
@@ -528,37 +611,36 @@ public class TopDownCharacterController : MonoBehaviour
         return points;
     }
 
-    private void FireBullet()
+
+
+
+    private void FireBullet(GameObject bulletPrefab, bool isShortRange = false)
     {
-        // Получаем позицию мыши
         Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
-        // Вычисляем направление от игрока к мыши
-        Vector2 direction = mousePosition - transform.position;
+        Vector2 direction = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        Quaternion bulletRotation = Quaternion.Euler(0, 0, angle);
 
-        // Выбираем префаб пули в зависимости от текущего оружия
-        GameObject selectedBulletPrefab = bulletPrefab; // По умолчанию — пуля обычного оружия
-        if (currentWeapon == WeaponType.Shotgun)
+        // Если это короткая дистанция (например, катана)
+        Vector3 spawnPosition = isShortRange
+            ? transform.position + (Vector3)(direction * 0.001f) // Смещение ближе к персонажу
+            : firePoint.position; // Обычное расположение
+
+        GameObject bullet = Instantiate(bulletPrefab, spawnPosition, bulletRotation);
+
+        if (isShortRange)
         {
-            selectedBulletPrefab = bullet2Prefab; // Используем первый префаб
-        }
-        else if (currentWeapon == WeaponType.Railgun)
-        {
-            selectedBulletPrefab = railgunBulletPrefab; // Используем третий префаб
+            // Уменьшаем дальность, добавляя компонент для автоуничтожения пули
+            Destroy(bullet, 0.3f); // Пуля исчезает через 0.2 секунды
         }
 
-        // Создаём пулю
-        Instantiate(selectedBulletPrefab, firePoint.position, bulletRotation);
-
-        // Уменьшаем количество оставшихся выстрелов
-        currentShots++;
-
-        // Обновляем UI патронов
+        currentShots++; // Уменьшение количества патронов
         UpdateAmmoUI();
     }
+
+
 
 
 

@@ -3,11 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\User\\SemestrProject\\popaaa123\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\hpbarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hpbarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\fxicons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fxicons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\objectcolorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\objectcolorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\SemestrProject\\popaaa123\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\menuline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menuline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -50,11 +74,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SpriteSwitcher.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteSwitcher.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpriteSwitcher.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteSwitcher.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpriteSwitcher.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:30:29.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "HPBarController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\HPBarController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HPBarController.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\HPBarController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HPBarController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:49:46.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Fxicons.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Fxicons.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Fxicons.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Fxicons.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Fxicons.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T20:10:34.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Sprite-Lit-Default.shader",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2024-12-16T19:53:30.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ObjectColorChanger.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ObjectColorChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ObjectColorChanger.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ObjectColorChanger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ObjectColorChanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T19:23:16.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Menuline.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Menuline.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Menuline.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Menuline.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Menuline.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:40:25.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AmmoPack.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\AmmoPack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AmmoPack.cs",
@@ -66,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "HealthPack.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\HealthPack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HealthPack.cs",
@@ -78,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "ObjectErasure.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\ObjectErasure.cs",
               "RelativeDocumentMoniker": "Assets\\ObjectErasure.cs",
@@ -90,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "bulet1.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\bulet1.cs",
               "RelativeDocumentMoniker": "Assets\\bulet1.cs",
@@ -102,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "12321.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\12321.cs",
               "RelativeDocumentMoniker": "Assets\\12321.cs",
@@ -114,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "pohyi.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\pohyi.cs",
               "RelativeDocumentMoniker": "Assets\\pohyi.cs",
@@ -126,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
@@ -144,14 +242,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\TopDownCharacterController.cs",
               "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\TopDownCharacterController.cs",
               "RelativeToolTip": "Assets\\Scripts\\TopDownCharacterController.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAAMAAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAADwv7gAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T12:51:04.162Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "EnemyAI.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\EnemyAI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI.cs",
@@ -159,12 +257,11 @@
               "RelativeToolTip": "Assets\\Scripts\\EnemyAI.cs",
               "ViewState": "AgIAAJ8AAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:44:48.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:44:48.89Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "NOPP.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\NOPP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NOPP.cs",

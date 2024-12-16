@@ -63,9 +63,11 @@
   <ItemGroup>
     <Compile Include="Assets\ObjectErasure.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\Fxicons.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\RGFX.cs" />
+    <Compile Include="Assets\Scripts\Menuline.cs" />
     <Compile Include="Assets\Scripts\AmmoPack.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\ItemPickupManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\TopDownCharacterController.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+    <Compile Include="Assets\Scripts\SpriteSwitcher.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +145,7 @@
     <None Include="Assets\URPGlitch-main\Shaders\DigitalGlitch.shader" />
     <None Include="Assets\Warped shooting fx files\Warped shooting fx files\public-license.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Katans anims\weapons_new2_sword_swing1.png.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\URPGlitch-main\Shaders\AnalogGlitch.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />

@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Shotgun
   - Railgun
+  - Katana
   layers:
   - Default
   - TransparentFX
