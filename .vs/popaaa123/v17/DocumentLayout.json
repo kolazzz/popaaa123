@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\SemestrProject\\popaaa123\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\shieldwithanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shieldwithanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\shieldwithcooldown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shieldwithcooldown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteSwitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SpriteSwitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -84,6 +84,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\pohyi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\pohyi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ShieldWithAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ShieldWithAnimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -93,11 +97,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "ShieldWithCooldown.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ShieldWithCooldown.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShieldWithCooldown.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ShieldWithCooldown.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShieldWithCooldown.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAQwDYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T18:38:53.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ShieldWithAnimation.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ShieldWithAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShieldWithAnimation.cs",
@@ -129,8 +146,7 @@
               "RelativeToolTip": "..\\..\\Downloads\\SpriteShieldController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T09:56:57.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T09:56:57.261Z"
             },
             {
               "$type": "Document",
@@ -158,16 +174,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SpriteSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteSwitcher.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpriteSwitcher.cs",
               "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteSwitcher.cs",
               "RelativeToolTip": "Assets\\Scripts\\SpriteSwitcher.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T22:30:29.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T22:30:29.114Z"
             },
             {
               "$type": "Document",
@@ -203,8 +217,7 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2024-12-16T19:53:30.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T19:53:30.077Z"
             },
             {
               "$type": "Document",
@@ -316,15 +329,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "TopDownCharacterController.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\TopDownCharacterController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TopDownCharacterController.cs",
               "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\TopDownCharacterController.cs",
               "RelativeToolTip": "Assets\\Scripts\\TopDownCharacterController.cs",
-              "ViewState": "AgIAAGMBAAAAAAAAAAAgwHwBAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAAAPYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:51:04.162Z"
+              "WhenOpened": "2024-11-18T12:51:04.162Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

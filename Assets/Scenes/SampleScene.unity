@@ -962,7 +962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.200012, y: -174.75}
+  m_AnchoredPosition: {x: -12.199951, y: -174.75}
   m_SizeDelta: {x: -732.09, y: -415.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58148776
@@ -6039,7 +6039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.799988, y: -174.75}
+  m_AnchoredPosition: {x: 62.80005, y: -174.75}
   m_SizeDelta: {x: -732.09, y: -415.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &347974371
@@ -11006,7 +11006,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619394800}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf88d173344c50e4aaa0b7f2ca077d47, type: 3}
   m_Name: 
@@ -11368,7 +11368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -71.1, y: -187.5}
+  m_AnchoredPosition: {x: -68.2, y: -187.5}
   m_SizeDelta: {x: 57.77, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &635069428
@@ -12612,7 +12612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.9, y: -188.8}
+  m_AnchoredPosition: {x: 83.4, y: -188.8}
   m_SizeDelta: {x: 57.77, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &667527561
@@ -15125,7 +15125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &828818080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15378,7 +15378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.3, y: -188.8}
+  m_AnchoredPosition: {x: 8.1, y: -188.8}
   m_SizeDelta: {x: 57.77, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &836716675
@@ -143380,6 +143380,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6004132452033431229, guid: 521dd4c1d9b890d4a9a192bbb43e55af, type: 3}
     - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
+      propertyPath: dashDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
       propertyPath: katanaHitbox
       value: 
       objectReference: {fileID: 0}
@@ -143414,6 +143418,10 @@ PrefabInstance:
     - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
       propertyPath: aimLineMaxLength
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
+      propertyPath: dashCooldownTime
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 76784766352850834, guid: c0212d1206ac1414ca7cac6bcff21348, type: 3}
       propertyPath: colors.Array.size

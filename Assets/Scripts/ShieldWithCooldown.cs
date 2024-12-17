@@ -66,6 +66,7 @@ public class ShieldWithAnimation : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && !isDashOnCooldown)
         {
+            
             StartCoroutine(DashWithCooldown());
         }
     }
@@ -157,7 +158,7 @@ public class ShieldWithAnimation : MonoBehaviour
         // Запускаем рывок через контроллер
         if (controller != null)
         {
-            controller.PerformDash();
+            controller.TemporarySpeedBoost();
         }
 
         if (objectD != null) objectD.SetActive(true);

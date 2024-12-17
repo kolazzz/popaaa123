@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\User\\SemestrProject\\popaaa123\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\shieldwithanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\shieldwithanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shieldwithanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -105,8 +105,7 @@
               "RelativeToolTip": "Assets\\Scripts\\ShieldWithAnimation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T11:23:50.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T11:23:50.453Z"
             },
             {
               "$type": "Document",
@@ -313,8 +312,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T13:20:44.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T13:20:44.677Z"
             },
             {
               "$type": "Document",
@@ -326,8 +324,7 @@
               "RelativeToolTip": "Assets\\Scripts\\TopDownCharacterController.cs",
               "ViewState": "AgIAAGMBAAAAAAAAAAAgwHwBAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:51:04.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:51:04.162Z"
             },
             {
               "$type": "Document",
@@ -339,8 +336,7 @@
               "RelativeToolTip": "Assets\\Scripts\\EnemyAI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:44:48.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:44:48.89Z"
             },
             {
               "$type": "Document",
@@ -352,8 +348,7 @@
               "RelativeToolTip": "Assets\\Scripts\\NOPP.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:00:11.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T23:00:11.982Z"
             }
           ]
         }

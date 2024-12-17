@@ -61,10 +61,9 @@ public class TopDownCharacterController : MonoBehaviour
     private bool isRunning;
 
     [Header("Dash Settings")]
-    public float dashForce = 10f;  // Сила рывка
-    public float dashCooldownTime = 4f; // Кулдаун рывка
-    private bool canDash = true;   // Флаг для контроля кулдауна
-
+    public float dashDuration = 3f;  // Длительность ускорения
+    public float dashCooldownTime = 3f; // Кулдаун рывка
+    private bool canDash = true;       // Флаг для контроля кулдауна
 
     // Анимация получения урона
     [Header("Damage Animation")]
@@ -141,8 +140,22 @@ public class TopDownCharacterController : MonoBehaviour
         UpdateAmmoUI();
     }
 
-    void Update()
+    private void Update()
     {
+        if (Input.GetMouseButtonDown(1)) // ПКМ = правая кнопка мыши
+        {
+            Debug.Log("ПКМ нажата!"); // Проверяем, ловится ли нажатие
+        }
+
+
+        if (Input.GetMouseButtonDown(1) && canDash) // Проверка нажатия ПКМ и кулдауна
+        {
+            Debug.Log("Буст запускается!"); // Проверка вызова
+            StartCoroutine(TemporarySpeedBoost()); // Запускаем корутину
+        }
+
+
+
         if (isDying || isTakingDamage) return; // Блокируем управление при проигрывании анимации
 
         moveInput.x = Input.GetAxis("Horizontal");
@@ -206,45 +219,39 @@ public class TopDownCharacterController : MonoBehaviour
                 HideEnemyColliders();
             }
         }
-
-
-        if (Input.GetMouseButtonDown(1) && canDash)
-        {
-            PerformDash();
-        }
+   
 
     }
 
 
-    public void PerformDash()
+    public IEnumerator TemporarySpeedBoost()
     {
-        if (!canDash || moveInput == Vector2.zero) return; // Проверяем кулдаун и наличие ввода
+        canDash = false;
 
-        canDash = false; // Блокируем рывок
+        float originalSpeed = moveSpeed; // Сохраняем текущую скорость
+        moveSpeed *= 2f; // Увеличиваем скорость
+        Debug.Log("Скорость увеличена до: " + moveSpeed);
 
-        // Устанавливаем мгновенную скорость в направлении ввода
-        Vector2 dashDirection = moveInput.normalized;
-        rb.linearVelocity = dashDirection * dashForce;
-
-        // Запускаем сброс скорости и кулдаун
-        StartCoroutine(ResetVelocityAfterDash());
+        // Запускаем кулдаун сразу параллельно
         StartCoroutine(DashCooldown());
+
+        yield return new WaitForSeconds(3f); // Длительность ускорения
+
+        moveSpeed = originalSpeed; // Возвращаем скорость к исходной
+        Debug.Log("Скорость возвращена: " + moveSpeed);
     }
-
-    private IEnumerator ResetVelocityAfterDash()
-    {
-        yield return new WaitForSeconds(0.2f); // Длительность рывка
-        rb.linearVelocity = Vector2.zero; // Сбрасываем скорость после рывка
-    }
-
-
-
 
     private IEnumerator DashCooldown()
     {
-        yield return new WaitForSeconds(dashCooldownTime);
-        canDash = true;  // Разрешаем рывок снова
+        Debug.Log("Кулдаун запущен!");
+        yield return new WaitForSeconds(8f); // Кулдаун длится 4 секунды
+        Debug.Log("Кулдаун завершён.");
+        canDash = true; // Снимаем кулдаун
     }
+
+
+
+
 
     private void CheckPickedWeapon(string weaponName)
     {
@@ -297,17 +304,7 @@ public class TopDownCharacterController : MonoBehaviour
         }
     }
 
-    private void DashTowardsCursor()
-    {
-        Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0;
 
-        // Направление рывка
-        Vector2 dashDirection = (mousePosition - transform.position).normalized;
-
-        // Перемещаем персонажа на дистанцию рывка
-        rb.MovePosition(rb.position + dashDirection * dashForce);
-    }
 
 
     private void KatanaShoot()
@@ -333,7 +330,7 @@ public class TopDownCharacterController : MonoBehaviour
     void FixedUpdate()
     {
         if (isDying || isTakingDamage) return; // Блокируем движение при проигрывании анимации
-        rb.linearVelocity = moveInput * moveSpeed;
+        rb.linearVelocity = moveInput.normalized * moveSpeed; // Учитываем текущее значение moveSpeed;
     }
 
     private void RegularShoot()
