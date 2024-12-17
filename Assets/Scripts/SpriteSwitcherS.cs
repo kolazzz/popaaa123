@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class SpriteSwitcher : MonoBehaviour
+public class SpriteSwitcherS : MonoBehaviour
 {
     [Header("Sprite Settings")]
     [SerializeField] private Sprite newSprite; // Новый спрайт
@@ -31,7 +31,7 @@ public class SpriteSwitcher : MonoBehaviour
         // Проверяем нажатие клавиши
         if (Input.GetKeyDown(switchKey) && !isSwitched)
         {
-            StartCoroutine(SwitchSpriteForTime(3f));
+            StartCoroutine(SwitchSpriteForTime(6f));
         }
     }
 

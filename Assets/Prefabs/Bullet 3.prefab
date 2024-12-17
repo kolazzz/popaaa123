@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1458815001837193271, guid: 9758cc9879066d84d8d43fdb261f090b, type: 3}
+  m_Sprite: {fileID: 9147813205533672176, guid: 8fc549408d44e0246b6f350183f63d70, type: 3}
   m_Color: {r: 0.2801565, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -146,10 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleSprites:
-  - {fileID: 1458815001837193271, guid: 9758cc9879066d84d8d43fdb261f090b, type: 3}
-  - {fileID: 8120838593713862620, guid: 3a9824b93e8d5f14693d5ac8b2505128, type: 3}
-  - {fileID: 6231545023187841414, guid: 6edd542fd7a470542933025c8621c5e5, type: 3}
-  - {fileID: -7187752938693492153, guid: a5475801528baad4fa8abfd0f1a98905, type: 3}
+  - {fileID: 9147813205533672176, guid: 8fc549408d44e0246b6f350183f63d70, type: 3}
+  - {fileID: -3088661829596279564, guid: fc429b378d95f0f4eafc3acad2cb962a, type: 3}
+  - {fileID: 3789487684335270546, guid: 8f6565e8807e6754b96e891bce15e41a, type: 3}
+  - {fileID: -7281195584086519269, guid: 489f8ad8d771def4a962797fd5c7e54a, type: 3}
   animationSpeed: 0.1
 --- !u!70 &6653276595603567847
 CapsuleCollider2D:

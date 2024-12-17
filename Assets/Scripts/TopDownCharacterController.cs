@@ -45,7 +45,7 @@ public class TopDownCharacterController : MonoBehaviour
 
     [Header("Collider Visualization Settings")]
     [SerializeField] private string objectsTagToShowColliders = "Enemy"; // Тег объектов для отображения коллайдеров
-    [SerializeField] private float colliderVisibilityDuration = 3f; // Длительность отображения
+    [SerializeField] public float colliderVisibilityDuration = 3f; // Длительность отображения
     private bool showColliders = false;
     private float colliderTimer = 0f;
 
@@ -59,6 +59,12 @@ public class TopDownCharacterController : MonoBehaviour
     private float animationTimer;
     private int currentFrame;
     private bool isRunning;
+
+    [Header("Dash Settings")]
+    public float dashForce = 10f;  // Сила рывка
+    public float dashCooldownTime = 4f; // Кулдаун рывка
+    private bool canDash = true;   // Флаг для контроля кулдауна
+
 
     // Анимация получения урона
     [Header("Damage Animation")]
@@ -200,6 +206,44 @@ public class TopDownCharacterController : MonoBehaviour
                 HideEnemyColliders();
             }
         }
+
+
+        if (Input.GetMouseButtonDown(1) && canDash)
+        {
+            PerformDash();
+        }
+
+    }
+
+
+    public void PerformDash()
+    {
+        if (!canDash || moveInput == Vector2.zero) return; // Проверяем кулдаун и наличие ввода
+
+        canDash = false; // Блокируем рывок
+
+        // Устанавливаем мгновенную скорость в направлении ввода
+        Vector2 dashDirection = moveInput.normalized;
+        rb.linearVelocity = dashDirection * dashForce;
+
+        // Запускаем сброс скорости и кулдаун
+        StartCoroutine(ResetVelocityAfterDash());
+        StartCoroutine(DashCooldown());
+    }
+
+    private IEnumerator ResetVelocityAfterDash()
+    {
+        yield return new WaitForSeconds(0.2f); // Длительность рывка
+        rb.linearVelocity = Vector2.zero; // Сбрасываем скорость после рывка
+    }
+
+
+
+
+    private IEnumerator DashCooldown()
+    {
+        yield return new WaitForSeconds(dashCooldownTime);
+        canDash = true;  // Разрешаем рывок снова
     }
 
     private void CheckPickedWeapon(string weaponName)
@@ -252,6 +296,19 @@ public class TopDownCharacterController : MonoBehaviour
             }
         }
     }
+
+    private void DashTowardsCursor()
+    {
+        Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+
+        // Направление рывка
+        Vector2 dashDirection = (mousePosition - transform.position).normalized;
+
+        // Перемещаем персонажа на дистанцию рывка
+        rb.MovePosition(rb.position + dashDirection * dashForce);
+    }
+
 
     private void KatanaShoot()
     {
@@ -378,15 +435,18 @@ public class TopDownCharacterController : MonoBehaviour
         ammoSpriteRenderer.sprite = ammoSprites[ammoIndex];
     }
 
+    public bool isInvincible = false; // Флаг неуязвимости
     public void TakeDamage(int damage)
     {
+        if (isInvincible) return; // Не получаем урон, если активен щит
+
         currentHealth -= damage;
 
         if (currentHealth <= 0 && !isDying)
         {
             StartCoroutine(PlayDeathAnimation());
         }
-        else if (!isTakingDamage)
+        else if (!isTakingDamage) // Анимация получения урона
         {
             StartCoroutine(PlayDamageAnimation());
         }
@@ -541,7 +601,7 @@ public class TopDownCharacterController : MonoBehaviour
         UpdateAmmoUI();
     }
 
-    private void ShowEnemyColliders()
+    public void ShowEnemyColliders()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(objectsTagToShowColliders);
 
@@ -584,7 +644,7 @@ public class TopDownCharacterController : MonoBehaviour
 
 
 
-    private void HideEnemyColliders()
+    public void HideEnemyColliders()
     {
         foreach (var highlight in highlights)
         {

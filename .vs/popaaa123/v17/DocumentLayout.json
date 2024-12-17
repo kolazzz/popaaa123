@@ -3,12 +3,43 @@
   "WorkspaceRootPath": "C:\\Users\\User\\SemestrProject\\popaaa123\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\shieldwithanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shieldwithanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\topdowncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spriteswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\nopp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nopp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\spriteshieldcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spriteshieldcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Downloads\\SpriteShieldController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\spriteanimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spriteanimationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\itempickupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itempickupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\hpbarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,8 +50,8 @@
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fxicons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\user\\semestrproject\\popaaa123\\assets\\scripts\\objectcolorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\objectcolorchanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ObjectColorChanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ObjectColorChanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\SemestrProject\\popaaa123\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -29,10 +60,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\menuline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menuline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\ammopack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,14 +84,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\pohyi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\pohyi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|C:\\Users\\User\\SemestrProject\\popaaa123\\assets\\scripts\\nopp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BB4AA46C-E517-CFB4-6D4A-79E4EE387F0C}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nopp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,11 +93,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ShieldWithAnimation.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ShieldWithAnimation.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShieldWithAnimation.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ShieldWithAnimation.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShieldWithAnimation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T11:23:50.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SpriteShieldController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteShieldController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpriteShieldController.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteShieldController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpriteShieldController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:57:57.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SpriteShieldController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Downloads\\SpriteShieldController.cs",
+              "RelativeDocumentMoniker": "..\\..\\Downloads\\SpriteShieldController.cs",
+              "ToolTip": "C:\\Users\\User\\Downloads\\SpriteShieldController.cs",
+              "RelativeToolTip": "..\\..\\Downloads\\SpriteShieldController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:56:57.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SpriteAnimationController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteAnimationController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpriteAnimationController.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteAnimationController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpriteAnimationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:47:37.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ItemPickupManager.cs",
+              "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ItemPickupManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemPickupManager.cs",
+              "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ItemPickupManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemPickupManager.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:49:46.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "SpriteSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\SpriteSwitcher.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpriteSwitcher.cs",
@@ -91,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "HPBarController.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\HPBarController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HPBarController.cs",
@@ -103,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "Fxicons.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Fxicons.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Fxicons.cs",
@@ -115,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "Sprite-Lit-Default.shader",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal\\Shaders\\2D\\Sprite-Lit-Default.shader",
@@ -128,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "ObjectColorChanger.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\ObjectColorChanger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ObjectColorChanger.cs",
@@ -140,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "Menuline.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Menuline.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menuline.cs",
@@ -152,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "AmmoPack.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\AmmoPack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AmmoPack.cs",
@@ -164,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "HealthPack.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\HealthPack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HealthPack.cs",
@@ -176,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "ObjectErasure.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\ObjectErasure.cs",
               "RelativeDocumentMoniker": "Assets\\ObjectErasure.cs",
@@ -188,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "bulet1.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\bulet1.cs",
               "RelativeDocumentMoniker": "Assets\\bulet1.cs",
@@ -200,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "12321.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\12321.cs",
               "RelativeDocumentMoniker": "Assets\\12321.cs",
@@ -212,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "pohyi.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\pohyi.cs",
               "RelativeDocumentMoniker": "Assets\\pohyi.cs",
@@ -224,44 +304,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 5,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
               "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\Bullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T13:20:44.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TopDownCharacterController.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\TopDownCharacterController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TopDownCharacterController.cs",
               "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\TopDownCharacterController.cs",
               "RelativeToolTip": "Assets\\Scripts\\TopDownCharacterController.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAADwv7gAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAgwHwBAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:51:04.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:51:04.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "EnemyAI.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\EnemyAI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyAI.cs",
               "ToolTip": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\EnemyAI.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyAI.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T12:44:48.89Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 4,
               "Title": "NOPP.cs",
               "DocumentMoniker": "C:\\Users\\User\\SemestrProject\\popaaa123\\Assets\\Scripts\\NOPP.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NOPP.cs",
