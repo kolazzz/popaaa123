@@ -113,6 +113,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scenes\InputFieldChecker.cs" />
     <Compile Include="Assets\ActivateOnExit.cs" />
+    <Compile Include="Assets\Scripts\TRIGGER PAYSA.cs" />
     <Compile Include="Assets\Scripts\HPBarController.cs" />
     <Compile Include="Assets\Scripts\Box.cs" />
     <Compile Include="Assets\pohyi.cs" />
