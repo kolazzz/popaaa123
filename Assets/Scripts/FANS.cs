@@ -20,17 +20,17 @@ public class FANS : MonoBehaviour
         AnimateIdle();
     }
 
-    private void AnimateIdle()
-    {
-        if (idleSprites == null || idleSprites.Length == 0)
-            return;
+   private void AnimateIdle()
+{
+    if (idleSprites == null || idleSprites.Length == 0)
+        return;
 
-        animationTimer += Time.deltaTime;
-        if (animationTimer >= animationSpeed)
-        {
-            animationTimer = 0f;
-            currentFrame = (currentFrame + 1) % idleSprites.Length;
-            spriteRenderer.sprite = idleSprites[currentFrame];
-        }
+    animationTimer += Time.unscaledDeltaTime; // Используем unscaledDeltaTime
+    if (animationTimer >= animationSpeed)
+    {
+        animationTimer = 0f;
+        currentFrame = (currentFrame + 1) % idleSprites.Length;
+        spriteRenderer.sprite = idleSprites[currentFrame];
     }
+}
 }
