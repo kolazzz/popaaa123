@@ -1,54 +1,77 @@
 using UnityEngine;
 
-public class portals : MonoBehaviour
+public class PortalAnimation : MonoBehaviour
 {
-    [Header("Idle Animation Settings")]
-    [SerializeField] private Sprite[] idleSprites;  // Первый массив спрайтов
-    [SerializeField] private Sprite[] secondAnimationSprites; // Второй массив спрайтов
+    [Header("Portal Animation Settings")]
+    [SerializeField] private Sprite[] portalSprites;  // Массив спрайтов для анимации
     [SerializeField] private float animationSpeed = 0.1f;  // Скорость анимации
 
     private SpriteRenderer spriteRenderer;
     private float animationTimer;
     private int currentFrame;
-    private bool isPlayingSecondAnimation = false; // Флаг для определения текущей анимации
+    private bool isAnimationComplete = false;  // Флаг завершения анимации
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+          // Скрываем портал до активации
     }
 
     void Update()
     {
-        AnimateIdle();
+        if (!isAnimationComplete)
+        {
+            AnimatePortal();  // Обновляем анимацию, пока она не завершена
+        }
     }
 
-    private void AnimateIdle()
+    /// <summary>
+    /// Запускает анимацию портала с начала.
+    /// </summary>
+    public void ActivatePortal()
     {
-        // Если включена вторая анимация, используем только её
-        Sprite[] currentSprites = isPlayingSecondAnimation ? secondAnimationSprites : idleSprites;
+        spriteRenderer.enabled = true;  // Отображаем портал
+        currentFrame = 0;
+        animationTimer = 0f;
+        isAnimationComplete = false;
 
-        if (currentSprites == null || currentSprites.Length == 0)
+        if (portalSprites.Length > 0)
+        {
+            spriteRenderer.sprite = portalSprites[currentFrame];  // Устанавливаем первый кадр
+        }
+    }
+
+    /// <summary>
+    /// Обрабатывает анимацию портала.
+    /// </summary>
+    private void AnimatePortal()
+    {
+        if (portalSprites == null || portalSprites.Length == 0)
+        {
+            Debug.LogWarning("Portal sprites array is empty or null.");
             return;
+        }
 
-        animationTimer += Time.unscaledDeltaTime; // Используем unscaledDeltaTime
+        animationTimer += Time.deltaTime;
+
         if (animationTimer >= animationSpeed)
         {
             animationTimer = 0f;
-            currentFrame++;
 
-            // Если текущая анимация завершена
-            if (currentFrame >= currentSprites.Length)
+            currentFrame++;  // Переход к следующему кадру
+
+            if (currentFrame >= portalSprites.Length)
             {
-                currentFrame = 0;
-
-                // Переход на вторую анимацию, если текущая первая
-                if (!isPlayingSecondAnimation)
-                {
-                    isPlayingSecondAnimation = true;
-                }
+                // Если достигли конца массива, фиксируем последний кадр
+                currentFrame = portalSprites.Length - 1;
+                isAnimationComplete = true;  // Отмечаем завершение анимации
             }
 
-            spriteRenderer.sprite = currentSprites[currentFrame];
+            // Устанавливаем текущий кадр в спрайт
+            if (currentFrame >= 0 && currentFrame < portalSprites.Length)
+            {
+                spriteRenderer.sprite = portalSprites[currentFrame];
+            }
         }
     }
 }

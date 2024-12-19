@@ -31,6 +31,10 @@ public class ShieldWithAnimation : MonoBehaviour
     private bool isScanOnCooldown = false;
     private bool isDashOnCooldown = false;
 
+    [Header("Audio Settings")]
+    public AudioSource shieldAudioSource; // Источник звука для щита
+
+
     private TopDownCharacterController controller;
 
     private void Start()
@@ -79,6 +83,12 @@ public class ShieldWithAnimation : MonoBehaviour
 
         controller.isInvincible = true;
 
+        // Начинаем воспроизведение звука
+        if (shieldAudioSource != null && !shieldAudioSource.isPlaying)
+        {
+            shieldAudioSource.Play();
+        }
+
         for (int i = 0; i < sprites.Length; i++)
         {
             spriteRenderer.sprite = sprites[i];
@@ -97,6 +107,12 @@ public class ShieldWithAnimation : MonoBehaviour
 
         if (spriteRenderer != null) spriteRenderer.enabled = false;
         if (shieldCollider != null) shieldCollider.enabled = false;
+
+        // Останавливаем воспроизведение звука
+        if (shieldAudioSource != null && shieldAudioSource.isPlaying)
+        {
+            shieldAudioSource.Stop();
+        }
 
         isPlaying = false;
         StartCoroutine(ShieldCooldown());

@@ -579,6 +579,11 @@ public class TopDownCharacterController : MonoBehaviour
     {
         currentWeapon = WeaponType.Railgun;
         Debug.Log("Switched to Railgun");
+
+        // Устанавливаем 100 патронов
+        currentShots = 0; // Сбрасываем текущие выстрелы
+        maxShots = 100; // Обновляем максимальное количество патронов
+        UpdateAmmoUI(); // Обновляем интерфейс
     }
 
     private void SwitchToKatana()

@@ -13,6 +13,9 @@ public class PauseOnTrigger : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.05f; // Скорость печатания (в секундах между буквами)
     [SerializeField] private KeyCode[] continueKeys; // Массив клавиш для продолжения
 
+    [Header("Аудио настройки")]
+    [SerializeField] private AudioSource audioSource; // Ссылка на аудио источник
+
     private bool isPaused = false;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
@@ -105,6 +108,11 @@ public class PauseOnTrigger : MonoBehaviour
             }
             typingCoroutine = StartCoroutine(TypeText(dialogMessage)); // Начинаем печатать текст
         }
+
+        if (audioSource != null)
+        {
+            audioSource.Play(); // Воспроизводим звук
+        }
     }
 
     private void ResumeGame()
@@ -125,6 +133,11 @@ public class PauseOnTrigger : MonoBehaviour
         if (secondaryText != null)
         {
             secondaryText.text = ""; // Очищаем дополнительный текст
+        }
+
+        if (audioSource != null)
+        {
+            audioSource.Stop(); // Останавливаем звук
         }
     }
 
@@ -150,6 +163,11 @@ public class PauseOnTrigger : MonoBehaviour
         {
             secondaryText.text = secondaryMessage; // Устанавливаем дополнительный текст
             Debug.Log("Показан дополнительный текст.");
+        }
+
+        if (audioSource != null)
+        {
+            audioSource.Stop(); // Останавливаем звук после появления второго текста
         }
 
         // Мигающий курсор
