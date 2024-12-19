@@ -24,6 +24,8 @@ public class ShieldWithAnimation : MonoBehaviour
     public GameObject objectD;                // Включается во время кулдауна рывка
     public TextMeshProUGUI dashCooldownText;  // Текст для обратного отсчета рывка
 
+
+
     private SpriteRenderer spriteRenderer;
     private Collider2D shieldCollider;
     private bool isPlaying = false;
