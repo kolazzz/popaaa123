@@ -30,7 +30,9 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private Sprite[] katanaAttackSprites; // Спрайты для анимации катаны
     [SerializeField] private float katanaAnimationSpeed = 0.1f; // Скорость анимации катаны
 
-
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource audioSource; // Источник звука
+    [SerializeField] private AudioClip colliderActivateSound; // Звук активации коллайдеров
 
     [SerializeField] private Transform firePoint;
     [SerializeField] private LayerMask damageLayerMask;
@@ -55,6 +57,10 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private Sprite[] runSprites;
     [SerializeField] private float animationSpeed = 0.1f;
 
+    [Header("Scan Settings")]
+    [SerializeField] private float scanCooldown = 5f; // Кулдаун для сканирования (указывается в инспекторе)
+    private float scanCooldownTimer = 0f; // Таймер кулдауна
+
     private SpriteRenderer spriteRenderer;
     private float animationTimer;
     private int currentFrame;
@@ -64,6 +70,12 @@ public class TopDownCharacterController : MonoBehaviour
     public float dashDuration = 3f;  // Длительность ускорения
     public float dashCooldownTime = 3f; // Кулдаун рывка
     private bool canDash = true;       // Флаг для контроля кулдауна
+
+    [SerializeField] private AudioSource dashAudioSource; // Аудиоисточник для рывка
+    [SerializeField] private AudioClip dashAudioClip;    // Аудиоклип для рывка
+
+    [SerializeField] private AudioSource shieldAudioSource; // Аудиоисточник для щита
+    [SerializeField] private AudioClip shieldAudioClip;     // Аудиоклип для активации щита
 
     // Анимация получения урона
     [Header("Damage Animation")]
@@ -204,10 +216,11 @@ public class TopDownCharacterController : MonoBehaviour
             shotgunShootTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && scanCooldownTimer <= 0f)
         {
             ShowEnemyColliders();
             colliderTimer = colliderVisibilityDuration; // Устанавливаем таймер
+            scanCooldownTimer = scanCooldown; // Сброс таймера кулдауна
         }
 
         if (colliderTimer > 0f)
@@ -219,7 +232,12 @@ public class TopDownCharacterController : MonoBehaviour
                 HideEnemyColliders();
             }
         }
-   
+
+        if (scanCooldownTimer > 0f)
+        {
+            scanCooldownTimer -= Time.deltaTime;
+        }
+
 
     }
 
@@ -231,6 +249,12 @@ public class TopDownCharacterController : MonoBehaviour
         float originalSpeed = moveSpeed; // Сохраняем текущую скорость
         moveSpeed *= 2f; // Увеличиваем скорость
         Debug.Log("Скорость увеличена до: " + moveSpeed);
+
+        // Воспроизводим звук рывка
+        if (dashAudioSource != null && dashAudioClip != null)
+        {
+            dashAudioSource.PlayOneShot(dashAudioClip);
+        }
 
         // Запускаем кулдаун сразу параллельно
         StartCoroutine(DashCooldown());
@@ -609,8 +633,9 @@ public class TopDownCharacterController : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
+            // Находим триггерные CircleCollider2D
             CircleCollider2D[] colliders = enemy.GetComponents<CircleCollider2D>()
-                .Where(c => c.isTrigger)
+                .Where(c => c.isTrigger) // Только триггеры
                 .ToArray();
 
             if (colliders.Length == 0)
@@ -621,6 +646,7 @@ public class TopDownCharacterController : MonoBehaviour
 
             foreach (var collider in colliders)
             {
+                // Создаем объект подсветки
                 var highlight = new GameObject("Highlight");
                 var lineRenderer = highlight.AddComponent<LineRenderer>();
 
@@ -631,8 +657,9 @@ public class TopDownCharacterController : MonoBehaviour
                 lineRenderer.endColor = Color.red;
                 lineRenderer.useWorldSpace = true;
 
-                int segments = 100;
-                float radius = collider.radius * enemy.transform.lossyScale.x;
+                // Строим круг на основе коллайдера
+                int segments = 100; // Количество сегментов круга для визуализации
+                float radius = collider.radius * enemy.transform.lossyScale.x; // Учитываем масштаб объекта
                 Vector3 center = collider.transform.position + (Vector3)collider.offset;
 
                 Vector3[] points = GetCirclePoints(center, radius, segments);
@@ -642,7 +669,14 @@ public class TopDownCharacterController : MonoBehaviour
                 highlights.Add(highlight); // Добавляем подсветку в список
             }
         }
+
+        // Проигрывание звука активации
+        if (audioSource != null && colliderActivateSound != null)
+        {
+            audioSource.PlayOneShot(colliderActivateSound);
+        }
     }
+
 
 
 
