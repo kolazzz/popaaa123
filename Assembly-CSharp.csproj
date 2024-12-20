@@ -61,7 +61,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.24f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ObjectErasure.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\SpriteShieldController.cs" />
     <Compile Include="Assets\Scripts\Fxicons.cs" />
@@ -82,22 +81,20 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scripts\FANS.cs" />
     <Compile Include="Assets\Scripts\SpriteSwitcherS.cs" />
-    <Compile Include="Assets\bulet1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\12321.cs" />
+    <Compile Include="Assets\Scripts\GlitchEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\teleport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\ItemPickupManager.cs" />
+    <Compile Include="Assets\Scripts\ObjectErasure.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\TopDownCharacterController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\GlitchEffect.cs" />
-    <Compile Include="Assets\Ammo.cs" />
-    <Compile Include="Assets\teleport.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -113,18 +110,19 @@
     <Compile Include="Assets\URPGlitch\Samples\SampleScenes\SampleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Portalactivate.cs" />
+    <Compile Include="Assets\Scripts\bulet1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scenes\InputFieldChecker.cs" />
     <Compile Include="Assets\Scripts\portals.cs" />
     <Compile Include="Assets\Scripts\postperehod.cs" />
-    <Compile Include="Assets\ActivateOnExit.cs" />
     <Compile Include="Assets\Scripts\TRIGGER PAYSA.cs" />
+    <Compile Include="Assets\Scripts\pizdabossy.cs" />
     <Compile Include="Assets\Scripts\HPBarController.cs" />
     <Compile Include="Assets\Scripts\Box.cs" />
-    <Compile Include="Assets\pohyi.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\SpriteAnimationController.cs" />
+    <Compile Include="Assets\Scripts\pohyi.cs" />
     <Compile Include="Assets\Scripts\LayerMaskUtil.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -133,9 +131,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\boss\bossai.cs" />
+    <Compile Include="Assets\Scripts\12321.cs" />
+    <Compile Include="Assets\Scripts\bossBublett.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+    <Compile Include="Assets\Scripts\ActivateOnExit.cs" />
+    <Compile Include="Assets\Scripts\Ammo.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +170,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\NuclearLeak_CharacterAnim_1.2\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\GlitchEffectShader.shader" />
+    <None Include="Assets\PP\GlitchEffectShader.shader" />
     <None Include="Assets\Kino\Glitch\Shader\DigitalGlitch.shader" />
     <None Include="Assets\Kino\Glitch\Shader\AnalogGlitch.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />

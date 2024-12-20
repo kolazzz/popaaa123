@@ -20,13 +20,15 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private float railgunShootCooldown = 0.2f; // Скорость стрельбы рельсотрона (настраивается в инспекторе)
     private float railgunShootTimer = 0f;                       // Таймер для стрельбы рельсотрона
 
-
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject bullet2Prefab;
     [SerializeField] private GameObject railgunBulletPrefab; // Префаб пули рельсотрона (зеленый)
     [SerializeField] private GameObject katanaBulletPrefab; // Префаб пули для катаны
 
-    [Header("Katana Settings")]
+
+    [Header("Katana Animation Sprites")]
+    [SerializeField] private Sprite[] katanaIdleSprites;
+    [SerializeField] private Sprite[] katanaRunSprites;
     [SerializeField] private Sprite[] katanaAttackSprites; // Спрайты для анимации катаны
     [SerializeField] private float katanaAnimationSpeed = 0.1f; // Скорость анимации катаны
 
@@ -335,11 +337,13 @@ public class TopDownCharacterController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // Запускаем анимацию атаки
             StartCoroutine(PlayKatanaAttackAnimation());
-            FireBullet(katanaBulletPrefab, true); // Передаём true для короткого расстояния
+
+            // Спавним пулю
+            FireBullet(katanaBulletPrefab, true); // true - для ближнего боя
         }
     }
-
 
     private IEnumerator PlayKatanaAttackAnimation()
     {
@@ -349,7 +353,6 @@ public class TopDownCharacterController : MonoBehaviour
             yield return new WaitForSeconds(katanaAnimationSpeed);
         }
     }
-
 
     void FixedUpdate()
     {
@@ -414,7 +417,17 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        Sprite[] currentSprites = isRunning ? runSprites : idleSprites;
+        Sprite[] currentSprites;
+
+        if (currentWeapon == WeaponType.Katana)
+        {
+            currentSprites = isRunning ? katanaRunSprites : katanaIdleSprites;
+        }
+        else
+        {
+            currentSprites = isRunning ? runSprites : idleSprites;
+        }
+
         animationTimer += Time.deltaTime;
         if (animationTimer >= animationSpeed)
         {
@@ -614,6 +627,10 @@ public class TopDownCharacterController : MonoBehaviour
     {
         currentWeapon = WeaponType.Katana;
         Debug.Log("Switched to Katana");
+
+        // Заменяем текущие массивы анимации
+        idleSprites = katanaIdleSprites;
+        runSprites = katanaRunSprites;
     }
 
     public void RestoreHealth(int amount)

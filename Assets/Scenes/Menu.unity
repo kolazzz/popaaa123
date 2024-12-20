@@ -681,6 +681,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5329576510242194595, guid: 6282d760d43f45249a44ff858e52d010, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329576510242194595, guid: 6282d760d43f45249a44ff858e52d010, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329576510242194595, guid: 6282d760d43f45249a44ff858e52d010, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.99116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329576510242194595, guid: 6282d760d43f45249a44ff858e52d010, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -71.499985
       objectReference: {fileID: 0}
@@ -758,6 +770,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915885393763234496, guid: 6282d760d43f45249a44ff858e52d010, type: 3}
       propertyPath: scene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516447046879584148, guid: 6282d760d43f45249a44ff858e52d010, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1558,7 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d72e48f07f877c43b84130078091102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 2
+  scene: 3
 --- !u!95 &379429286
 Animator:
   serializedVersion: 7
@@ -6932,10 +6948,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Type "Start" in command line to proceed
 
-    Click Options to view..options
 
-    Same
-    with Authors'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7bc4c248ec75d7b4bac50d4d121a5bad, type: 2}
   m_sharedMaterial: {fileID: -898111533084928751, guid: 7bc4c248ec75d7b4bac50d4d121a5bad, type: 2}
