@@ -5846,7 +5846,7 @@ MonoBehaviour:
   waveCount: 42
   waveRadius: 4
   waveCooldown: 10
-  maxHealth: 1
+  maxHealth: 20
   deathSprites:
   - {fileID: -1403364628745199294, guid: 72289318b6ffc8c49a185cbe9523b971, type: 3}
   - {fileID: 2977334442489971551, guid: 406e66fa0702e304fb0a66ced16c0349, type: 3}
@@ -14318,7 +14318,7 @@ Transform:
   m_GameObject: {fileID: 1391649118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.07, y: -54.87, z: 0}
+  m_LocalPosition: {x: 26.07, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
