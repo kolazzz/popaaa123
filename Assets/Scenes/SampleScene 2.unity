@@ -5077,7 +5077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &828818080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5846,7 +5846,7 @@ MonoBehaviour:
   waveCount: 42
   waveRadius: 4
   waveCooldown: 10
-  maxHealth: 20
+  maxHealth: 1
   deathSprites:
   - {fileID: -1403364628745199294, guid: 72289318b6ffc8c49a185cbe9523b971, type: 3}
   - {fileID: 2977334442489971551, guid: 406e66fa0702e304fb0a66ced16c0349, type: 3}
@@ -14206,7 +14206,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 1e9bd21fc5bdedf4a9389fec5f6d5d54, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ddba2d0c8da4cd243aef5ceaccef3a0c, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ddba2d0c8da4cd243aef5ceaccef3a0c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
